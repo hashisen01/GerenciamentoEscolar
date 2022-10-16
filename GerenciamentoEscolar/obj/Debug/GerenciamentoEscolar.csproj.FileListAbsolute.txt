@@ -1,0 +1,16 @@
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\GerenciamentoEscolar.exe.config
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\GerenciamentoEscolar.exe
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\GerenciamentoEscolar.pdb
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Properties.Resources.resources
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.GenerateResource.cache
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.exe
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.pdb
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Management_System.resources
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormRegister.resources
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormHome.resources
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormLogin.resources
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.AssemblyReference.cache
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\AltoControls.dll
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\AltoControls.pdb
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.CopyComplete
