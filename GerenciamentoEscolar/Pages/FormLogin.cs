@@ -14,12 +14,12 @@ namespace GerenciamentoEscolar.Pages
 {
     public partial class FormLogin : Form
     {
-        private Login login;
+        private DbConnections dbConnections;
         private MessageException messageAlert;
         public FormLogin()
         {
             InitializeComponent();
-            login = new Login();
+            dbConnections = new DbConnections();
             messageAlert = new MessageException();
         }
 
@@ -41,22 +41,21 @@ namespace GerenciamentoEscolar.Pages
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            var isEmpty = login.IsEmpty(txt_user.Text, txt_password.Text);
-            var response = login.response;
+            var loginUser = dbConnections.LoginUser(txt_user.Text, txt_password.Text);
+            var response = dbConnections.response;
 
-            if (!isEmpty && response) OpenHome();
+            if (loginUser && response) OpenHome();
             else MessageBox.Show(messageAlert.InvalidLogin());
         }
 
         private void OpenHome()
         {
-            (string name, bool type) User;
-            User.name = login.username;
-            User.type = login.user_admin;
-            MessageBox.Show("Bem vindo(a), " + User.name + "!");
+            (string name, bool admin) User;
+            User.name = dbConnections.username;
+            User.admin = dbConnections.user_admin;
             FormLogin form_login = (FormLogin)Application.OpenForms["FormLogin"];
             form_login.Hide();
-            Management_System management_system = new Management_System();
+            Management_System management_system = new Management_System(User);
             management_system.ShowDialog();
         }
 

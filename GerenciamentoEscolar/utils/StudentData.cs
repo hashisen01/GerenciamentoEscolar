@@ -3,48 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GerenciamentoEscolar.utils
 {
-    class StudentData
+    public class StudentData
     {
-        //CONSTRUCTOR
-        public StudentData()
-        {
+        public CheckBox InProject { get; set; }
+        public CheckBox DontHaveEmail { get; set; }
 
-        }
+        public string ParentsId { get; set; }
+        public string FatherName { get; set; }
+        public string MotherName { get; set; }
 
-        public string Name { get; set; }
-        public string Cpf { get; set; }
-        public string Birth { get; set; }
-        public string PisNis { get; set; }
-        public string CadSensus { get; set; }
-        public string NameFather { get; set; }
-        public string NameMother { get; set; }
+        public string ContactId { get; set; }
         public string Telephone1 { get; set; }
         public string Telephone2 { get; set; }
         public string Email { get; set; }
+
+        public string AddressId { get; set; }
+        public string ZipCode { get; set; }
+        public string Street { get; set; }
+        public string District { get; set; }
+        public string City { get; set; }
+        public string Number { get; set; }
+        public string Complement { get; set; }
+
+        public string StudentId { get; set; }
+        public string Name { get; set; }
+        public string Cpf { get; set; }
+        public DateTime Birth { get; set; }
+        public string Nis { get; set; }
+        public string StudentCod { get; set; }
+        public string Note { get; set; }
         public string Shift { get; set; }
         public string Serie { get; set; }
-        public string Project { get; set; }
-        public string OtherProject { get; set; }
-
-        public StudentData(string Name, string Cpf, string Birth, string PisNis, string CadSensus, string NameFather, string NameMother, string Telephone1, string Telephone2, string Email, string Shift, string Serie, string Project, string OtherProjetc)
-        {
-            this.Name = Name;
-            this.Cpf = Cpf;
-            this.Birth = Birth;
-            this.PisNis = PisNis;
-            this.CadSensus = CadSensus;
-            this.NameFather = NameFather;
-            this.NameMother = NameMother;
-            this.Telephone1 = Telephone1;
-            this.Telephone2 = Telephone2;
-            this.Email = Email;
-            this.Shift = Shift;
-            this.Serie = Serie;
-            this.Project = Project;
-            this.OtherProject = OtherProjetc;
-        }
+        public string ProjectName { get ; set; }
+        public int Active { get; set; }
     }
 }

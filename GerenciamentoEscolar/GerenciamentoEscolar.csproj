@@ -33,8 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.2.2\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +61,12 @@
     </Compile>
     <Compile Include="Management_System.Designer.cs">
       <DependentUpon>Management_System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\PopupMessages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modals\PopupMessages.Designer.cs">
+      <DependentUpon>PopupMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\FormHome.cs">
       <SubType>Form</SubType>
@@ -70,17 +86,26 @@
     <Compile Include="Pages\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FormUpdateRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FormUpdateRegister.Designer.cs">
+      <DependentUpon>FormUpdateRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\ContentFormat.cs" />
     <Compile Include="utils\db.cs" />
     <Compile Include="utils\GenericMethods.cs" />
-    <Compile Include="utils\Login.cs" />
+    <Compile Include="utils\DbConnections.cs" />
     <Compile Include="utils\MessageException.cs" />
-    <Compile Include="utils\RegisterStudent.cs" />
-    <Compile Include="utils\StudentAdress.cs" />
+    <Compile Include="utils\ValidateData.cs" />
     <Compile Include="utils\StudentData.cs" />
     <EmbeddedResource Include="Management_System.resx">
       <DependentUpon>Management_System.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\PopupMessages.resx">
+      <DependentUpon>PopupMessages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
@@ -91,11 +116,15 @@
     <EmbeddedResource Include="Pages\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FormUpdateRegister.resx">
+      <DependentUpon>FormUpdateRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,12 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Documents\StyleExtern\AltoControls\AltoControls.csproj">
-      <Project>{bc91e6cd-29e4-4292-af0c-2d27a8b93f31}</Project>
-      <Name>AltoControls</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bloqueado01.png" />
@@ -155,6 +178,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\do-utilizador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registerStudent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equilibrio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finances.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atividade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prancheta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diploma1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\do-utilizador-do.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finance-pran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inscrever-se.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateStudent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

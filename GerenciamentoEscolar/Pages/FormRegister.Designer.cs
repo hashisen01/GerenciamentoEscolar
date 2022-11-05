@@ -29,64 +29,54 @@ namespace GerenciamentoEscolar.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_rua = new System.Windows.Forms.Label();
             this.btn_registerStudent = new System.Windows.Forms.Button();
             this.group_turno = new System.Windows.Forms.GroupBox();
             this.rd_afternoon = new System.Windows.Forms.RadioButton();
             this.rd_morning = new System.Windows.Forms.RadioButton();
-            this.cpf_student = new System.Windows.Forms.MaskedTextBox();
-            this.telephone2 = new System.Windows.Forms.MaskedTextBox();
-            this.telephone1 = new System.Windows.Forms.MaskedTextBox();
             this.lbl_telefone2 = new System.Windows.Forms.Label();
-            this.lbl_cep = new System.Windows.Forms.Label();
             this.chk_not_email = new System.Windows.Forms.CheckBox();
             this.serie_year = new System.Windows.Forms.ComboBox();
-            this.nis_pis = new System.Windows.Forms.MaskedTextBox();
-            this.census_register = new System.Windows.Forms.MaskedTextBox();
-            this.group_endereco = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.zip_code = new System.Windows.Forms.MaskedTextBox();
-            this.complement = new System.Windows.Forms.TextBox();
-            this.number_location = new System.Windows.Forms.TextBox();
-            this.city = new System.Windows.Forms.TextBox();
-            this.lbl_cidade = new System.Windows.Forms.Label();
-            this.district = new System.Windows.Forms.TextBox();
-            this.lbl_complemento = new System.Windows.Forms.Label();
-            this.lbl_bairro = new System.Windows.Forms.Label();
-            this.street = new System.Windows.Forms.TextBox();
             this.birth_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_nascimento = new System.Windows.Forms.Label();
-            this.lbl_project = new System.Windows.Forms.Label();
             this.lbl_telefone1 = new System.Windows.Forms.Label();
             this.lbl_nome_projeto = new System.Windows.Forms.Label();
             this.lbl_nome_mae = new System.Windows.Forms.Label();
             this.lbl_nome_pai = new System.Windows.Forms.Label();
             this.lbl_nis_pis = new System.Windows.Forms.Label();
             this.lbl_cad_censo = new System.Windows.Forms.Label();
-            this.project_name = new System.Windows.Forms.TextBox();
             this.lbl_nome_aluno = new System.Windows.Forms.Label();
-            this.mother_name = new System.Windows.Forms.TextBox();
-            this.father_name = new System.Windows.Forms.TextBox();
-            this.txt_nameStudent = new System.Windows.Forms.TextBox();
             this.lbl_serie_ano = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_cpf_aluno = new System.Windows.Forms.Label();
-            this.input_email = new System.Windows.Forms.TextBox();
-            this.project = new System.Windows.Forms.ComboBox();
+            this.nameStudent = new System.Windows.Forms.TextBox();
+            this.father_name = new System.Windows.Forms.TextBox();
+            this.mother_name = new System.Windows.Forms.TextBox();
+            this.numberContact1 = new System.Windows.Forms.TextBox();
+            this.numberContact2 = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.project_name = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_Note = new System.Windows.Forms.Label();
+            this.note = new System.Windows.Forms.TextBox();
+            this.zip_code = new System.Windows.Forms.TextBox();
+            this.complement = new System.Windows.Forms.TextBox();
+            this.street = new System.Windows.Forms.TextBox();
+            this.district = new System.Windows.Forms.TextBox();
+            this.city = new System.Windows.Forms.TextBox();
+            this.number_residence = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_cep = new System.Windows.Forms.Label();
+            this.lbl_rua = new System.Windows.Forms.Label();
+            this.lbl_cidade = new System.Windows.Forms.Label();
+            this.lbl_bairro = new System.Windows.Forms.Label();
+            this.lbl_complemento = new System.Windows.Forms.Label();
+            this.cpf_student = new System.Windows.Forms.TextBox();
+            this.nis = new System.Windows.Forms.TextBox();
+            this.census_register = new System.Windows.Forms.TextBox();
+            this.inProject = new System.Windows.Forms.CheckBox();
             this.group_turno.SuspendLayout();
-            this.group_endereco.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbl_rua
-            // 
-            this.lbl_rua.AutoSize = true;
-            this.lbl_rua.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rua.Location = new System.Drawing.Point(332, 34);
-            this.lbl_rua.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_rua.Name = "lbl_rua";
-            this.lbl_rua.Size = new System.Drawing.Size(40, 21);
-            this.lbl_rua.TabIndex = 2;
-            this.lbl_rua.Text = "Rua:";
             // 
             // btn_registerStudent
             // 
@@ -97,7 +87,7 @@ namespace GerenciamentoEscolar.Pages
             this.btn_registerStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registerStudent.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registerStudent.ForeColor = System.Drawing.Color.White;
-            this.btn_registerStudent.Location = new System.Drawing.Point(886, 606);
+            this.btn_registerStudent.Location = new System.Drawing.Point(880, 600);
             this.btn_registerStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_registerStudent.Name = "btn_registerStudent";
             this.btn_registerStudent.Size = new System.Drawing.Size(225, 68);
@@ -111,7 +101,7 @@ namespace GerenciamentoEscolar.Pages
             this.group_turno.Controls.Add(this.rd_afternoon);
             this.group_turno.Controls.Add(this.rd_morning);
             this.group_turno.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_turno.Location = new System.Drawing.Point(57, 566);
+            this.group_turno.Location = new System.Drawing.Point(501, 537);
             this.group_turno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.group_turno.Name = "group_turno";
             this.group_turno.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -142,37 +132,6 @@ namespace GerenciamentoEscolar.Pages
             this.rd_morning.Text = "Matutino";
             this.rd_morning.UseVisualStyleBackColor = true;
             // 
-            // cpf_student
-            // 
-            this.cpf_student.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpf_student.Location = new System.Drawing.Point(501, 61);
-            this.cpf_student.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cpf_student.Mask = "000,000,000-00";
-            this.cpf_student.Name = "cpf_student";
-            this.cpf_student.Size = new System.Drawing.Size(130, 29);
-            this.cpf_student.TabIndex = 37;
-            this.cpf_student.Text = "65475465465";
-            // 
-            // telephone2
-            // 
-            this.telephone2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telephone2.Location = new System.Drawing.Point(267, 400);
-            this.telephone2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.telephone2.Mask = "(00) 0 0000-0000";
-            this.telephone2.Name = "telephone2";
-            this.telephone2.Size = new System.Drawing.Size(130, 29);
-            this.telephone2.TabIndex = 36;
-            // 
-            // telephone1
-            // 
-            this.telephone1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telephone1.Location = new System.Drawing.Point(57, 400);
-            this.telephone1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.telephone1.Mask = "(00) 0 0000-0000";
-            this.telephone1.Name = "telephone1";
-            this.telephone1.Size = new System.Drawing.Size(130, 29);
-            this.telephone1.TabIndex = 35;
-            // 
             // lbl_telefone2
             // 
             this.lbl_telefone2.AutoSize = true;
@@ -183,17 +142,6 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_telefone2.Size = new System.Drawing.Size(81, 21);
             this.lbl_telefone2.TabIndex = 29;
             this.lbl_telefone2.Text = "Contato 2:";
-            // 
-            // lbl_cep
-            // 
-            this.lbl_cep.AutoSize = true;
-            this.lbl_cep.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cep.Location = new System.Drawing.Point(18, 34);
-            this.lbl_cep.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_cep.Name = "lbl_cep";
-            this.lbl_cep.Size = new System.Drawing.Size(40, 21);
-            this.lbl_cep.TabIndex = 2;
-            this.lbl_cep.Text = "CEP:";
             // 
             // chk_not_email
             // 
@@ -228,163 +176,18 @@ namespace GerenciamentoEscolar.Pages
             "7º ano",
             "8º ano",
             "9º ano"});
-            this.serie_year.Location = new System.Drawing.Point(267, 576);
+            this.serie_year.Location = new System.Drawing.Point(501, 487);
             this.serie_year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.serie_year.Name = "serie_year";
             this.serie_year.Size = new System.Drawing.Size(130, 29);
             this.serie_year.TabIndex = 38;
             this.serie_year.SelectedIndexChanged += new System.EventHandler(this.serie_year_SelectedIndexChanged);
             // 
-            // nis_pis
-            // 
-            this.nis_pis.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nis_pis.Location = new System.Drawing.Point(968, 61);
-            this.nis_pis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nis_pis.Mask = "00,000000,00-00";
-            this.nis_pis.Name = "nis_pis";
-            this.nis_pis.Size = new System.Drawing.Size(130, 29);
-            this.nis_pis.TabIndex = 34;
-            // 
-            // census_register
-            // 
-            this.census_register.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.census_register.Location = new System.Drawing.Point(57, 143);
-            this.census_register.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.census_register.Mask = "00000000000000";
-            this.census_register.Name = "census_register";
-            this.census_register.Size = new System.Drawing.Size(140, 29);
-            this.census_register.TabIndex = 33;
-            // 
-            // group_endereco
-            // 
-            this.group_endereco.Controls.Add(this.label1);
-            this.group_endereco.Controls.Add(this.zip_code);
-            this.group_endereco.Controls.Add(this.complement);
-            this.group_endereco.Controls.Add(this.number_location);
-            this.group_endereco.Controls.Add(this.city);
-            this.group_endereco.Controls.Add(this.lbl_cidade);
-            this.group_endereco.Controls.Add(this.district);
-            this.group_endereco.Controls.Add(this.lbl_complemento);
-            this.group_endereco.Controls.Add(this.lbl_bairro);
-            this.group_endereco.Controls.Add(this.street);
-            this.group_endereco.Controls.Add(this.lbl_rua);
-            this.group_endereco.Controls.Add(this.lbl_cep);
-            this.group_endereco.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_endereco.Location = new System.Drawing.Point(501, 100);
-            this.group_endereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.group_endereco.Name = "group_endereco";
-            this.group_endereco.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.group_endereco.Size = new System.Drawing.Size(610, 341);
-            this.group_endereco.TabIndex = 32;
-            this.group_endereco.TabStop = false;
-            this.group_endereco.Text = "Endereço";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 262);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Número:";
-            // 
-            // zip_code
-            // 
-            this.zip_code.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zip_code.Location = new System.Drawing.Point(22, 60);
-            this.zip_code.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.zip_code.Mask = "00000-000";
-            this.zip_code.Name = "zip_code";
-            this.zip_code.Size = new System.Drawing.Size(89, 29);
-            this.zip_code.TabIndex = 7;
-            this.zip_code.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GetAdress);
-            // 
-            // complement
-            // 
-            this.complement.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complement.Location = new System.Drawing.Point(336, 138);
-            this.complement.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.complement.Multiline = true;
-            this.complement.Name = "complement";
-            this.complement.Size = new System.Drawing.Size(250, 136);
-            this.complement.TabIndex = 6;
-            // 
-            // number_location
-            // 
-            this.number_location.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number_location.Location = new System.Drawing.Point(24, 291);
-            this.number_location.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.number_location.Name = "number_location";
-            this.number_location.Size = new System.Drawing.Size(248, 29);
-            this.number_location.TabIndex = 6;
-            // 
-            // city
-            // 
-            this.city.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.city.Location = new System.Drawing.Point(24, 216);
-            this.city.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.city.Name = "city";
-            this.city.Size = new System.Drawing.Size(248, 29);
-            this.city.TabIndex = 6;
-            // 
-            // lbl_cidade
-            // 
-            this.lbl_cidade.AutoSize = true;
-            this.lbl_cidade.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cidade.Location = new System.Drawing.Point(20, 186);
-            this.lbl_cidade.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_cidade.Name = "lbl_cidade";
-            this.lbl_cidade.Size = new System.Drawing.Size(61, 21);
-            this.lbl_cidade.TabIndex = 2;
-            this.lbl_cidade.Text = "Cidade:";
-            // 
-            // district
-            // 
-            this.district.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.district.Location = new System.Drawing.Point(22, 138);
-            this.district.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.district.Name = "district";
-            this.district.Size = new System.Drawing.Size(250, 29);
-            this.district.TabIndex = 6;
-            // 
-            // lbl_complemento
-            // 
-            this.lbl_complemento.AutoSize = true;
-            this.lbl_complemento.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_complemento.Location = new System.Drawing.Point(332, 108);
-            this.lbl_complemento.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_complemento.Name = "lbl_complemento";
-            this.lbl_complemento.Size = new System.Drawing.Size(112, 21);
-            this.lbl_complemento.TabIndex = 2;
-            this.lbl_complemento.Text = "Complemento:";
-            // 
-            // lbl_bairro
-            // 
-            this.lbl_bairro.AutoSize = true;
-            this.lbl_bairro.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bairro.Location = new System.Drawing.Point(18, 108);
-            this.lbl_bairro.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_bairro.Name = "lbl_bairro";
-            this.lbl_bairro.Size = new System.Drawing.Size(55, 21);
-            this.lbl_bairro.TabIndex = 2;
-            this.lbl_bairro.Text = "Bairro:";
-            // 
-            // street
-            // 
-            this.street.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.street.Location = new System.Drawing.Point(336, 60);
-            this.street.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.street.Name = "street";
-            this.street.Size = new System.Drawing.Size(250, 29);
-            this.street.TabIndex = 6;
-            // 
             // birth_date
             // 
             this.birth_date.Cursor = System.Windows.Forms.Cursors.Hand;
             this.birth_date.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birth_date.Location = new System.Drawing.Point(735, 61);
+            this.birth_date.Location = new System.Drawing.Point(735, 59);
             this.birth_date.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.birth_date.Name = "birth_date";
             this.birth_date.Size = new System.Drawing.Size(130, 29);
@@ -401,18 +204,6 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_nascimento.TabIndex = 28;
             this.lbl_nascimento.Text = "Nascimento:";
             // 
-            // lbl_project
-            // 
-            this.lbl_project.AutoSize = true;
-            this.lbl_project.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_project.Location = new System.Drawing.Point(501, 458);
-            this.lbl_project.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_project.Name = "lbl_project";
-            this.lbl_project.Size = new System.Drawing.Size(63, 21);
-            this.lbl_project.TabIndex = 27;
-            this.lbl_project.Text = "Projeto:";
-            this.lbl_project.Visible = false;
-            // 
             // lbl_telefone1
             // 
             this.lbl_telefone1.AutoSize = true;
@@ -428,7 +219,7 @@ namespace GerenciamentoEscolar.Pages
             // 
             this.lbl_nome_projeto.AutoSize = true;
             this.lbl_nome_projeto.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome_projeto.Location = new System.Drawing.Point(501, 545);
+            this.lbl_nome_projeto.Location = new System.Drawing.Point(744, 495);
             this.lbl_nome_projeto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_nome_projeto.Name = "lbl_nome_projeto";
             this.lbl_nome_projeto.Size = new System.Drawing.Size(132, 21);
@@ -480,16 +271,6 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_cad_censo.TabIndex = 21;
             this.lbl_cad_censo.Text = "Cadastro do censo:";
             // 
-            // project_name
-            // 
-            this.project_name.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.project_name.Location = new System.Drawing.Point(501, 576);
-            this.project_name.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.project_name.Name = "project_name";
-            this.project_name.Size = new System.Drawing.Size(240, 29);
-            this.project_name.TabIndex = 17;
-            this.project_name.Visible = false;
-            // 
             // lbl_nome_aluno
             // 
             this.lbl_nome_aluno.AutoSize = true;
@@ -501,41 +282,11 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_nome_aluno.TabIndex = 20;
             this.lbl_nome_aluno.Text = "Nome do aluno:";
             // 
-            // mother_name
-            // 
-            this.mother_name.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mother_name.Location = new System.Drawing.Point(57, 314);
-            this.mother_name.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.mother_name.Name = "mother_name";
-            this.mother_name.Size = new System.Drawing.Size(340, 29);
-            this.mother_name.TabIndex = 16;
-            this.mother_name.Text = "Neurizan Rodrigues Costa";
-            // 
-            // father_name
-            // 
-            this.father_name.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.father_name.Location = new System.Drawing.Point(57, 228);
-            this.father_name.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.father_name.Name = "father_name";
-            this.father_name.Size = new System.Drawing.Size(340, 29);
-            this.father_name.TabIndex = 15;
-            this.father_name.Text = "Francisco Francisne Alves Ferreira";
-            // 
-            // txt_nameStudent
-            // 
-            this.txt_nameStudent.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nameStudent.Location = new System.Drawing.Point(57, 61);
-            this.txt_nameStudent.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txt_nameStudent.Name = "txt_nameStudent";
-            this.txt_nameStudent.Size = new System.Drawing.Size(340, 29);
-            this.txt_nameStudent.TabIndex = 14;
-            this.txt_nameStudent.Text = "Matheus Costa";
-            // 
             // lbl_serie_ano
             // 
             this.lbl_serie_ano.AutoSize = true;
             this.lbl_serie_ano.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_serie_ano.Location = new System.Drawing.Point(263, 545);
+            this.lbl_serie_ano.Location = new System.Drawing.Point(497, 458);
             this.lbl_serie_ano.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_serie_ano.Name = "lbl_serie_ano";
             this.lbl_serie_ano.Size = new System.Drawing.Size(79, 21);
@@ -564,39 +315,260 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_cpf_aluno.TabIndex = 30;
             this.lbl_cpf_aluno.Text = "CPF do aluno:";
             // 
-            // input_email
+            // nameStudent
             // 
-            this.input_email.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input_email.Location = new System.Drawing.Point(57, 488);
-            this.input_email.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.input_email.Name = "input_email";
-            this.input_email.Size = new System.Drawing.Size(340, 29);
-            this.input_email.TabIndex = 13;
-            this.input_email.Text = "teste@teste.com";
+            this.nameStudent.Location = new System.Drawing.Point(57, 59);
+            this.nameStudent.Name = "nameStudent";
+            this.nameStudent.Size = new System.Drawing.Size(342, 29);
+            this.nameStudent.TabIndex = 60;
             // 
-            // project
+            // father_name
             // 
-            this.project.DropDownHeight = 200;
-            this.project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.project.DropDownWidth = 150;
-            this.project.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.project.FormattingEnabled = true;
-            this.project.IntegralHeight = false;
-            this.project.Items.AddRange(new object[] {
-            "Taekwondo",
-            "Marcenaria",
-            "Melhor idade",
-            "Bombeiro mirim",
-            "Vida e movimento",
-            "SCFV",
-            "Outros"});
-            this.project.Location = new System.Drawing.Point(501, 484);
-            this.project.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.project.Name = "project";
-            this.project.Size = new System.Drawing.Size(150, 29);
-            this.project.TabIndex = 38;
-            this.project.Visible = false;
-            this.project.SelectedIndexChanged += new System.EventHandler(this.project_SelectedIndexChanged);
+            this.father_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.father_name.Location = new System.Drawing.Point(57, 227);
+            this.father_name.Name = "father_name";
+            this.father_name.Size = new System.Drawing.Size(342, 29);
+            this.father_name.TabIndex = 61;
+            // 
+            // mother_name
+            // 
+            this.mother_name.Location = new System.Drawing.Point(57, 313);
+            this.mother_name.Name = "mother_name";
+            this.mother_name.Size = new System.Drawing.Size(342, 29);
+            this.mother_name.TabIndex = 65;
+            // 
+            // numberContact1
+            // 
+            this.numberContact1.Location = new System.Drawing.Point(57, 400);
+            this.numberContact1.MaxLength = 11;
+            this.numberContact1.Name = "numberContact1";
+            this.numberContact1.Size = new System.Drawing.Size(130, 29);
+            this.numberContact1.TabIndex = 66;
+            this.numberContact1.WordWrap = false;
+            this.numberContact1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberContact_KeyPress);
+            this.numberContact1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numberContact1_KeyUp);
+            // 
+            // numberContact2
+            // 
+            this.numberContact2.Location = new System.Drawing.Point(267, 400);
+            this.numberContact2.MaxLength = 11;
+            this.numberContact2.Name = "numberContact2";
+            this.numberContact2.Size = new System.Drawing.Size(130, 29);
+            this.numberContact2.TabIndex = 67;
+            this.numberContact2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberContact_KeyPress);
+            this.numberContact2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numberContact2_KeyUp);
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(57, 487);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(342, 29);
+            this.email.TabIndex = 68;
+            // 
+            // project_name
+            // 
+            this.project_name.Location = new System.Drawing.Point(748, 524);
+            this.project_name.Name = "project_name";
+            this.project_name.Size = new System.Drawing.Size(250, 29);
+            this.project_name.TabIndex = 69;
+            this.project_name.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbl_Note);
+            this.groupBox1.Controls.Add(this.note);
+            this.groupBox1.Controls.Add(this.zip_code);
+            this.groupBox1.Controls.Add(this.complement);
+            this.groupBox1.Controls.Add(this.street);
+            this.groupBox1.Controls.Add(this.district);
+            this.groupBox1.Controls.Add(this.city);
+            this.groupBox1.Controls.Add(this.number_residence);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbl_cep);
+            this.groupBox1.Controls.Add(this.lbl_rua);
+            this.groupBox1.Controls.Add(this.lbl_cidade);
+            this.groupBox1.Controls.Add(this.lbl_bairro);
+            this.groupBox1.Controls.Add(this.lbl_complemento);
+            this.groupBox1.Location = new System.Drawing.Point(480, 106);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(625, 339);
+            this.groupBox1.TabIndex = 70;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Endereço";
+            // 
+            // lbl_Note
+            // 
+            this.lbl_Note.AutoSize = true;
+            this.lbl_Note.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Note.Location = new System.Drawing.Point(332, 179);
+            this.lbl_Note.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_Note.Name = "lbl_Note";
+            this.lbl_Note.Size = new System.Drawing.Size(194, 21);
+            this.lbl_Note.TabIndex = 91;
+            this.lbl_Note.Text = "Observação sobre o aluno:";
+            // 
+            // note
+            // 
+            this.note.Location = new System.Drawing.Point(336, 207);
+            this.note.Multiline = true;
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(250, 116);
+            this.note.TabIndex = 90;
+            // 
+            // zip_code
+            // 
+            this.zip_code.Location = new System.Drawing.Point(21, 51);
+            this.zip_code.MaxLength = 9;
+            this.zip_code.Name = "zip_code";
+            this.zip_code.Size = new System.Drawing.Size(110, 29);
+            this.zip_code.TabIndex = 89;
+            this.zip_code.Tag = "0";
+            this.zip_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.zip_code_KeyPress);
+            this.zip_code.KeyUp += new System.Windows.Forms.KeyEventHandler(this.zip_code_KeyUp);
+            // 
+            // complement
+            // 
+            this.complement.Location = new System.Drawing.Point(336, 121);
+            this.complement.Name = "complement";
+            this.complement.Size = new System.Drawing.Size(250, 29);
+            this.complement.TabIndex = 87;
+            // 
+            // street
+            // 
+            this.street.Location = new System.Drawing.Point(336, 51);
+            this.street.Name = "street";
+            this.street.Size = new System.Drawing.Size(250, 29);
+            this.street.TabIndex = 86;
+            // 
+            // district
+            // 
+            this.district.Location = new System.Drawing.Point(21, 121);
+            this.district.Name = "district";
+            this.district.Size = new System.Drawing.Size(250, 29);
+            this.district.TabIndex = 84;
+            // 
+            // city
+            // 
+            this.city.Location = new System.Drawing.Point(21, 207);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(250, 29);
+            this.city.TabIndex = 83;
+            // 
+            // number_residence
+            // 
+            this.number_residence.Location = new System.Drawing.Point(21, 294);
+            this.number_residence.Name = "number_residence";
+            this.number_residence.Size = new System.Drawing.Size(250, 29);
+            this.number_residence.TabIndex = 82;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 266);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 21);
+            this.label1.TabIndex = 81;
+            this.label1.Text = "Número:";
+            // 
+            // lbl_cep
+            // 
+            this.lbl_cep.AutoSize = true;
+            this.lbl_cep.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cep.Location = new System.Drawing.Point(17, 27);
+            this.lbl_cep.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_cep.Name = "lbl_cep";
+            this.lbl_cep.Size = new System.Drawing.Size(40, 21);
+            this.lbl_cep.TabIndex = 76;
+            this.lbl_cep.Text = "CEP:";
+            // 
+            // lbl_rua
+            // 
+            this.lbl_rua.AutoSize = true;
+            this.lbl_rua.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rua.Location = new System.Drawing.Point(332, 23);
+            this.lbl_rua.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_rua.Name = "lbl_rua";
+            this.lbl_rua.Size = new System.Drawing.Size(40, 21);
+            this.lbl_rua.TabIndex = 77;
+            this.lbl_rua.Text = "Rua:";
+            // 
+            // lbl_cidade
+            // 
+            this.lbl_cidade.AutoSize = true;
+            this.lbl_cidade.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cidade.Location = new System.Drawing.Point(17, 179);
+            this.lbl_cidade.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_cidade.Name = "lbl_cidade";
+            this.lbl_cidade.Size = new System.Drawing.Size(61, 21);
+            this.lbl_cidade.TabIndex = 78;
+            this.lbl_cidade.Text = "Cidade:";
+            // 
+            // lbl_bairro
+            // 
+            this.lbl_bairro.AutoSize = true;
+            this.lbl_bairro.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_bairro.Location = new System.Drawing.Point(17, 92);
+            this.lbl_bairro.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_bairro.Name = "lbl_bairro";
+            this.lbl_bairro.Size = new System.Drawing.Size(55, 21);
+            this.lbl_bairro.TabIndex = 79;
+            this.lbl_bairro.Text = "Bairro:";
+            // 
+            // lbl_complemento
+            // 
+            this.lbl_complemento.AutoSize = true;
+            this.lbl_complemento.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_complemento.Location = new System.Drawing.Point(332, 92);
+            this.lbl_complemento.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_complemento.Name = "lbl_complemento";
+            this.lbl_complemento.Size = new System.Drawing.Size(112, 21);
+            this.lbl_complemento.TabIndex = 80;
+            this.lbl_complemento.Text = "Complemento:";
+            // 
+            // cpf_student
+            // 
+            this.cpf_student.Location = new System.Drawing.Point(501, 59);
+            this.cpf_student.MaxLength = 11;
+            this.cpf_student.Name = "cpf_student";
+            this.cpf_student.Size = new System.Drawing.Size(137, 29);
+            this.cpf_student.TabIndex = 88;
+            this.cpf_student.Tag = "0";
+            this.cpf_student.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cpf_student_KeyPress);
+            this.cpf_student.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cpf_student_KeyUp);
+            // 
+            // nis
+            // 
+            this.nis.Location = new System.Drawing.Point(968, 59);
+            this.nis.MaxLength = 11;
+            this.nis.Name = "nis";
+            this.nis.Size = new System.Drawing.Size(137, 29);
+            this.nis.TabIndex = 89;
+            this.nis.Tag = "0";
+            this.nis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nis_KeyPress);
+            this.nis.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nis_KeyUp);
+            // 
+            // census_register
+            // 
+            this.census_register.Location = new System.Drawing.Point(57, 144);
+            this.census_register.MaxLength = 12;
+            this.census_register.Name = "census_register";
+            this.census_register.Size = new System.Drawing.Size(137, 29);
+            this.census_register.TabIndex = 90;
+            this.census_register.Tag = "0";
+            this.census_register.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.census_register_KeyPress);
+            // 
+            // inProject
+            // 
+            this.inProject.AutoSize = true;
+            this.inProject.Location = new System.Drawing.Point(748, 458);
+            this.inProject.Name = "inProject";
+            this.inProject.Size = new System.Drawing.Size(144, 25);
+            this.inProject.TabIndex = 91;
+            this.inProject.Text = "Está em projeto*";
+            this.inProject.UseVisualStyleBackColor = true;
+            this.inProject.CheckedChanged += new System.EventHandler(this.inProject_CheckedChanged);
             // 
             // FormRegister
             // 
@@ -606,36 +578,35 @@ namespace GerenciamentoEscolar.Pages
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1171, 749);
+            this.Controls.Add(this.inProject);
+            this.Controls.Add(this.census_register);
+            this.Controls.Add(this.nis);
+            this.Controls.Add(this.cpf_student);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.project_name);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.numberContact2);
+            this.Controls.Add(this.numberContact1);
+            this.Controls.Add(this.mother_name);
+            this.Controls.Add(this.father_name);
+            this.Controls.Add(this.nameStudent);
             this.Controls.Add(this.btn_registerStudent);
             this.Controls.Add(this.group_turno);
-            this.Controls.Add(this.cpf_student);
-            this.Controls.Add(this.telephone2);
-            this.Controls.Add(this.telephone1);
             this.Controls.Add(this.lbl_telefone2);
             this.Controls.Add(this.chk_not_email);
-            this.Controls.Add(this.project);
             this.Controls.Add(this.serie_year);
-            this.Controls.Add(this.nis_pis);
-            this.Controls.Add(this.census_register);
-            this.Controls.Add(this.group_endereco);
             this.Controls.Add(this.birth_date);
             this.Controls.Add(this.lbl_nascimento);
-            this.Controls.Add(this.lbl_project);
             this.Controls.Add(this.lbl_telefone1);
             this.Controls.Add(this.lbl_nome_projeto);
             this.Controls.Add(this.lbl_nome_mae);
             this.Controls.Add(this.lbl_nome_pai);
             this.Controls.Add(this.lbl_nis_pis);
             this.Controls.Add(this.lbl_cad_censo);
-            this.Controls.Add(this.project_name);
             this.Controls.Add(this.lbl_nome_aluno);
-            this.Controls.Add(this.mother_name);
-            this.Controls.Add(this.father_name);
-            this.Controls.Add(this.txt_nameStudent);
             this.Controls.Add(this.lbl_serie_ano);
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.lbl_cpf_aluno);
-            this.Controls.Add(this.input_email);
             this.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -645,58 +616,58 @@ namespace GerenciamentoEscolar.Pages
             this.Load += new System.EventHandler(this.FormRegister_Load);
             this.group_turno.ResumeLayout(false);
             this.group_turno.PerformLayout();
-            this.group_endereco.ResumeLayout(false);
-            this.group_endereco.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_rua;
         private System.Windows.Forms.Button btn_registerStudent;
         private System.Windows.Forms.GroupBox group_turno;
-        private System.Windows.Forms.MaskedTextBox cpf_student;
-        private System.Windows.Forms.MaskedTextBox telephone2;
-        private System.Windows.Forms.MaskedTextBox telephone1;
         private System.Windows.Forms.Label lbl_telefone2;
-        private System.Windows.Forms.Label lbl_cep;
         private System.Windows.Forms.CheckBox chk_not_email;
         private System.Windows.Forms.ComboBox serie_year;
-        private System.Windows.Forms.MaskedTextBox nis_pis;
-        private System.Windows.Forms.MaskedTextBox census_register;
-        private System.Windows.Forms.GroupBox group_endereco;
-        private System.Windows.Forms.MaskedTextBox zip_code;
-        private System.Windows.Forms.TextBox complement;
-        private System.Windows.Forms.TextBox number_location;
-        private System.Windows.Forms.TextBox city;
-        private System.Windows.Forms.Label lbl_cidade;
-        private System.Windows.Forms.TextBox district;
-        private System.Windows.Forms.Label lbl_complemento;
-        private System.Windows.Forms.Label lbl_bairro;
-        private System.Windows.Forms.TextBox street;
         private System.Windows.Forms.DateTimePicker birth_date;
         private System.Windows.Forms.Label lbl_nascimento;
-        private System.Windows.Forms.Label lbl_project;
         private System.Windows.Forms.Label lbl_telefone1;
         private System.Windows.Forms.Label lbl_nome_projeto;
         private System.Windows.Forms.Label lbl_nome_mae;
         private System.Windows.Forms.Label lbl_nome_pai;
         private System.Windows.Forms.Label lbl_nis_pis;
         private System.Windows.Forms.Label lbl_cad_censo;
-        private System.Windows.Forms.TextBox project_name;
         private System.Windows.Forms.Label lbl_nome_aluno;
-        private System.Windows.Forms.TextBox mother_name;
-        private System.Windows.Forms.TextBox father_name;
-        private System.Windows.Forms.TextBox txt_nameStudent;
         private System.Windows.Forms.Label lbl_serie_ano;
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label lbl_cpf_aluno;
-        private System.Windows.Forms.TextBox input_email;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox project;
         private System.Windows.Forms.RadioButton rd_afternoon;
         private System.Windows.Forms.RadioButton rd_morning;
+        private System.Windows.Forms.TextBox nameStudent;
+        private System.Windows.Forms.TextBox father_name;
+        private System.Windows.Forms.TextBox mother_name;
+        private System.Windows.Forms.TextBox numberContact1;
+        private System.Windows.Forms.TextBox numberContact2;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox project_name;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox complement;
+        private System.Windows.Forms.TextBox street;
+        private System.Windows.Forms.TextBox district;
+        private System.Windows.Forms.TextBox city;
+        private System.Windows.Forms.TextBox number_residence;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_cep;
+        private System.Windows.Forms.Label lbl_rua;
+        private System.Windows.Forms.Label lbl_cidade;
+        private System.Windows.Forms.Label lbl_bairro;
+        private System.Windows.Forms.Label lbl_complemento;
+        private System.Windows.Forms.TextBox cpf_student;
+        private System.Windows.Forms.TextBox zip_code;
+        private System.Windows.Forms.TextBox nis;
+        private System.Windows.Forms.TextBox census_register;
+        private System.Windows.Forms.CheckBox inProject;
+        private System.Windows.Forms.Label lbl_Note;
+        private System.Windows.Forms.TextBox note;
     }
 }

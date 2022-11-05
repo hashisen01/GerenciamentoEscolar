@@ -61,5 +61,15 @@ namespace GerenciamentoEscolar.utils
         {
             return "Informe pelo menos um responsável pelo estudando.";
         }
+
+        public string RegisterSuccess()
+        {
+            return "Matrícula realizada";
+        }
+
+        public string RegisterError()
+        {
+            return "Não foi possível concluir essa ação";
+        }
     }
 }

@@ -13,14 +13,20 @@ namespace GerenciamentoEscolar
 {
     public partial class Management_System : Form
     {
-        public Management_System()
+        (string name, bool admin) User;
+        Management_System management_System;
+        public Management_System((string name, bool admin) User)
         {
             InitializeComponent();
+            this.User.name = User.name;
+            this.User.admin = User.admin;
         }
 
         private void Management_System_Load(object sender, EventArgs e)
         {
-            btn_home_Click(sender, e);
+            lbl_welcome.Text = $"Olá, {User.name}";
+            panel_form.Visible = false;
+            ActivatedButton(btn_home);
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -70,23 +76,24 @@ namespace GerenciamentoEscolar
             {
                 case "btn_home":
                     ActivatedButton(btn_home);
-                    sub_menu_register.Visible = false;
-                    FormHome form_home = new FormHome();
-                    form_home.TopLevel = false;
+                    panel_form.Visible = false;
                     panel_form.Controls.Clear();
-                    panel_form.Controls.Add(form_home);
-                    form_home.Show();
+                    menu_buttons.Visible = true;
                     break;
 
                 case "btn_finances":
                     ActivatedButton(button);
+                    menu_buttons.Visible = false;
+                    panel_form.Visible = true;
                     sub_menu_register.Visible = false;
                     break;
 
                 case "btn_register":
                     ActivatedButton(button);
                     if (sub_menu_register.Visible)
+                    {
                         sub_menu_register.Visible = false;
+                    }
                     else
                     {
                         sub_menu_register.Visible = true;
@@ -95,10 +102,19 @@ namespace GerenciamentoEscolar
 
                 case "btn_updateRegister":
                     ActivatedButton(button);
+                    menu_buttons.Visible = false;
+                    panel_form.Visible = true;
+                    FormUpdateRegister form_updateRegister = new FormUpdateRegister();
+                    form_updateRegister.TopLevel = false;
+                    panel_form.Controls.Clear();
+                    panel_form.Controls.Add(form_updateRegister);
+                    form_updateRegister.Show();
                     break;
 
                 case "btn_registerStudent":
                     ActivatedButton(button);
+                    menu_buttons.Visible = false;
+                    panel_form.Visible = true;
                     FormRegister form_register = new FormRegister();
                     form_register.TopLevel = false;
                     panel_form.Controls.Clear();
@@ -107,10 +123,14 @@ namespace GerenciamentoEscolar
                     break;
 
                 case "btn_activity":
+                    panel_form.Visible = true;
+                    menu_buttons.Visible = false;
                     ActivatedButton(button);
                     break;
 
                 case "btn_historic":
+                    panel_form.Visible = true;
+                    menu_buttons.Visible = false;
                     ActivatedButton(button);
                     break;
 
@@ -127,7 +147,7 @@ namespace GerenciamentoEscolar
                     break;
                 else
                 {
-                    ctrl.BackColor = Color.FromArgb(0, 0, 192);
+                    ctrl.BackColor = Color.Blue;
                     ctrl.ForeColor = Color.White;
                 }
             }
@@ -143,7 +163,7 @@ namespace GerenciamentoEscolar
                 }
             }
 
-            if (btn_active.Name == "btn_register" || btn_active.Name == "btn_updateStudent" || btn_active.Name == "btn_registerStudent")
+            if (btn_active.Name == "btn_register" || btn_active.Name == "btn_updateRegister" || btn_active.Name == "btn_registerStudent")
             {
                 if (btn_active.Name == "btn_register")
                     btn_active.ForeColor = Color.White;
@@ -157,6 +177,45 @@ namespace GerenciamentoEscolar
                 btn_active.BackColor = Color.FromArgb(178, 214, 255);
                 btn_active.ForeColor = Color.Black;
             }
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            if (management_System != (Management_System)Application.OpenForms["Management_System"])
+            {
+                management_System = (Management_System)Application.OpenForms["Management_System"];
+                management_System.Hide();
+                FormLogin form_login = (FormLogin)Application.OpenForms["FormLogin"];
+                form_login.Show();
+            }
+            else
+            {
+                management_System = new Management_System(User);
+                management_System.Hide();
+                FormLogin form_login = (FormLogin)Application.OpenForms["FormLogin"];
+                form_login.Show();
+            }
+        }
+
+        private void registerStudent_Click(object sender, EventArgs e)
+        {
+            sub_menu_register.Visible = true;
+            btn_registerStudent_Click(sender, e);
+        }
+
+        private void finances_Click(object sender, EventArgs e)
+        {
+            btn_finances_Click(sender, e);
+        }
+
+        private void historic_Click(object sender, EventArgs e)
+        {
+            btn_historic_Click(sender, e);
+        }
+
+        private void activity_Click(object sender, EventArgs e)
+        {
+            btn_activity_Click(sender, e);
         }
     }
 }

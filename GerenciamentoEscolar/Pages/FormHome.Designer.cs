@@ -29,136 +29,173 @@ namespace GerenciamentoEscolar.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panel_form = new System.Windows.Forms.Panel();
+            this.panelActivity = new System.Windows.Forms.Panel();
+            this.btn_activity = new System.Windows.Forms.Button();
+            this.panelHistoric = new System.Windows.Forms.Panel();
+            this.btn_historic = new System.Windows.Forms.Button();
+            this.panelFinance = new System.Windows.Forms.Panel();
+            this.btn_finances = new System.Windows.Forms.Button();
+            this.panelRegister = new System.Windows.Forms.Panel();
+            this.btn_registerStudent = new System.Windows.Forms.Button();
+            this.menu_buttons = new System.Windows.Forms.TableLayoutPanel();
+            this.panelActivity.SuspendLayout();
+            this.panelHistoric.SuspendLayout();
+            this.panelFinance.SuspendLayout();
+            this.panelRegister.SuspendLayout();
+            this.menu_buttons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // panel_form
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 6, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(283, 163);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(584, 125);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.panel_form.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_form.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_form.Location = new System.Drawing.Point(0, 0);
+            this.panel_form.Name = "panel_form";
+            this.panel_form.Size = new System.Drawing.Size(1171, 749);
+            this.panel_form.TabIndex = 1;
             // 
-            // panel1
+            // panelActivity
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(125, 119);
-            this.panel1.TabIndex = 0;
+            this.panelActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.panelActivity.Controls.Add(this.btn_activity);
+            this.panelActivity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelActivity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelActivity.Location = new System.Drawing.Point(456, 3);
+            this.panelActivity.Name = "panelActivity";
+            this.panelActivity.Size = new System.Drawing.Size(125, 119);
+            this.panelActivity.TabIndex = 3;
             // 
-            // panel2
+            // btn_activity
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(154, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(125, 119);
-            this.panel2.TabIndex = 1;
+            this.btn_activity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.btn_activity.FlatAppearance.BorderSize = 0;
+            this.btn_activity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(116)))), ((int)(((byte)(239)))));
+            this.btn_activity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
+            this.btn_activity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_activity.ForeColor = System.Drawing.Color.White;
+            this.btn_activity.Image = global::GerenciamentoEscolar.Properties.Resources.atividade;
+            this.btn_activity.Location = new System.Drawing.Point(0, 0);
+            this.btn_activity.Name = "btn_activity";
+            this.btn_activity.Size = new System.Drawing.Size(125, 119);
+            this.btn_activity.TabIndex = 3;
+            this.btn_activity.Text = "Atividades";
+            this.btn_activity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_activity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_activity.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // panelHistoric
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(305, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(125, 119);
-            this.panel3.TabIndex = 2;
+            this.panelHistoric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.panelHistoric.Controls.Add(this.btn_historic);
+            this.panelHistoric.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelHistoric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHistoric.Location = new System.Drawing.Point(305, 3);
+            this.panelHistoric.Name = "panelHistoric";
+            this.panelHistoric.Size = new System.Drawing.Size(125, 119);
+            this.panelHistoric.TabIndex = 2;
             // 
-            // panel4
+            // btn_historic
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(456, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(125, 119);
-            this.panel4.TabIndex = 3;
+            this.btn_historic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.btn_historic.FlatAppearance.BorderSize = 0;
+            this.btn_historic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(116)))), ((int)(((byte)(239)))));
+            this.btn_historic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
+            this.btn_historic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_historic.ForeColor = System.Drawing.Color.White;
+            this.btn_historic.Image = global::GerenciamentoEscolar.Properties.Resources.certificado;
+            this.btn_historic.Location = new System.Drawing.Point(0, 0);
+            this.btn_historic.Name = "btn_historic";
+            this.btn_historic.Size = new System.Drawing.Size(125, 119);
+            this.btn_historic.TabIndex = 2;
+            this.btn_historic.Text = "Histórico e Notas";
+            this.btn_historic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_historic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_historic.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // panelFinance
             // 
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Image = global::GerenciamentoEscolar.Properties.Resources.registered1;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 120);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Realizar Matrícula";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panelFinance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.panelFinance.Controls.Add(this.btn_finances);
+            this.panelFinance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelFinance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFinance.ForeColor = System.Drawing.Color.White;
+            this.panelFinance.Location = new System.Drawing.Point(154, 3);
+            this.panelFinance.Name = "panelFinance";
+            this.panelFinance.Size = new System.Drawing.Size(125, 119);
+            this.panelFinance.TabIndex = 1;
             // 
-            // label2
+            // btn_finances
             // 
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Image = global::GerenciamentoEscolar.Properties.Resources.transparency;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(3, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 120);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Finanças";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_finances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.btn_finances.FlatAppearance.BorderSize = 0;
+            this.btn_finances.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(116)))), ((int)(((byte)(239)))));
+            this.btn_finances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
+            this.btn_finances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_finances.ForeColor = System.Drawing.Color.White;
+            this.btn_finances.Image = global::GerenciamentoEscolar.Properties.Resources.finances;
+            this.btn_finances.Location = new System.Drawing.Point(0, 0);
+            this.btn_finances.Name = "btn_finances";
+            this.btn_finances.Size = new System.Drawing.Size(125, 119);
+            this.btn_finances.TabIndex = 2;
+            this.btn_finances.Text = "Finanças";
+            this.btn_finances.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_finances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_finances.UseVisualStyleBackColor = false;
+            this.btn_finances.Click += new System.EventHandler(this.btn_finances_Click);
             // 
-            // label3
+            // panelRegister
             // 
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Image = global::GerenciamentoEscolar.Properties.Resources.diploma;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(3, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 120);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Histórico e Notas";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panelRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.panelRegister.Controls.Add(this.btn_registerStudent);
+            this.panelRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelRegister.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRegister.Location = new System.Drawing.Point(3, 3);
+            this.panelRegister.Name = "panelRegister";
+            this.panelRegister.Size = new System.Drawing.Size(125, 119);
+            this.panelRegister.TabIndex = 0;
             // 
-            // label4
+            // btn_registerStudent
             // 
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Image = global::GerenciamentoEscolar.Properties.Resources.bloco_de_anotacoes;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(3, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 120);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Atividades";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_registerStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.btn_registerStudent.FlatAppearance.BorderSize = 0;
+            this.btn_registerStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(116)))), ((int)(((byte)(239)))));
+            this.btn_registerStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
+            this.btn_registerStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registerStudent.ForeColor = System.Drawing.Color.White;
+            this.btn_registerStudent.Image = global::GerenciamentoEscolar.Properties.Resources.registerStudent;
+            this.btn_registerStudent.Location = new System.Drawing.Point(0, 0);
+            this.btn_registerStudent.Name = "btn_registerStudent";
+            this.btn_registerStudent.Size = new System.Drawing.Size(125, 119);
+            this.btn_registerStudent.TabIndex = 1;
+            this.btn_registerStudent.Text = "Realizar Matrícula";
+            this.btn_registerStudent.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_registerStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_registerStudent.UseVisualStyleBackColor = false;
+            this.btn_registerStudent.Click += new System.EventHandler(this.btn_registerStudent_Click);
+            // 
+            // menu_buttons
+            // 
+            this.menu_buttons.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menu_buttons.ColumnCount = 7;
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.menu_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.menu_buttons.Controls.Add(this.panelRegister, 0, 0);
+            this.menu_buttons.Controls.Add(this.panelFinance, 2, 0);
+            this.menu_buttons.Controls.Add(this.panelHistoric, 4, 0);
+            this.menu_buttons.Controls.Add(this.panelActivity, 6, 0);
+            this.menu_buttons.Location = new System.Drawing.Point(283, 163);
+            this.menu_buttons.Name = "menu_buttons";
+            this.menu_buttons.RowCount = 1;
+            this.menu_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.menu_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.menu_buttons.Size = new System.Drawing.Size(584, 125);
+            this.menu_buttons.TabIndex = 0;
             // 
             // FormHome
             // 
@@ -168,7 +205,8 @@ namespace GerenciamentoEscolar.Pages
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1171, 749);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.menu_buttons);
+            this.Controls.Add(this.panel_form);
             this.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -176,25 +214,25 @@ namespace GerenciamentoEscolar.Pages
             this.Text = "FormHome";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormHome_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.panelActivity.ResumeLayout(false);
+            this.panelHistoric.ResumeLayout(false);
+            this.panelFinance.ResumeLayout(false);
+            this.panelRegister.ResumeLayout(false);
+            this.menu_buttons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel_form;
+        private System.Windows.Forms.Panel panelActivity;
+        private System.Windows.Forms.Button btn_activity;
+        private System.Windows.Forms.Panel panelHistoric;
+        private System.Windows.Forms.Button btn_historic;
+        private System.Windows.Forms.Panel panelFinance;
+        private System.Windows.Forms.Button btn_finances;
+        private System.Windows.Forms.Panel panelRegister;
+        private System.Windows.Forms.Button btn_registerStudent;
+        private System.Windows.Forms.TableLayoutPanel menu_buttons;
     }
 }
