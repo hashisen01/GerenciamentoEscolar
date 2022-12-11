@@ -27,7 +27,7 @@ namespace GerenciamentoEscolar.Pages
         private void btn_registerStudent_Click(object sender, EventArgs e)
         {
             menu_buttons.Visible = false;
-            FormRegister form_register = new FormRegister();
+            FormRegister form_register = new FormRegister(null);
             form_register.TopLevel = false;
             panel_form.Controls.Clear();
             panel_form.Controls.Add(form_register);

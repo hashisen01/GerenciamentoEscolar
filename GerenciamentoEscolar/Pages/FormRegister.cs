@@ -1,6 +1,7 @@
 ﻿using Gerenciamento_Escolar.str;
 using GerenciamentoEscolar.Modals;
 using GerenciamentoEscolar.utils;
+using Microsoft.Win32;
 using System;
 using System.Activities.Expressions;
 using System.Collections.Generic;
@@ -15,31 +16,90 @@ namespace GerenciamentoEscolar.Pages
     {
         GenericMethods genericMethods;
         ContentFormat contentFormat;
-        public FormRegister()
+        List<StudentData> studentDataUpdate = new List<StudentData>();
+        private string student_id = null;
+        private string parent_id = null;
+        private string contact_id = null;
+        private string address_id = null;
+        private string [] message = { "Sucesso", "A matrícula foi realizada com sucesso!", "Dados alterados com sucesso!", "ERRO!", "Não foi possível reslizar a matrícula.\nReinicie o sistema e tente novamente!\nSe o erro percistir entre em contato com o desenvolvedor!" };
+        private string[] txtBtnRegister = { "Realizar matrícula", "Atualizar matrícula" };
+        public FormRegister(List<StudentData> studentData)
         {
             InitializeComponent();
-            LoadingComponents();
+            this.studentDataUpdate = studentData;
         }
-
-        private void LoadingComponents()
-        {
-            birth_date.Format = DateTimePickerFormat.Custom;
-            birth_date.CustomFormat = "dd/MM/yyyy";
-            genericMethods = new GenericMethods();
-            contentFormat = new ContentFormat();
-        }
-
         private void FormRegister_Load(object sender, EventArgs e)
         {
+            LoadComponents();
+        }
 
+        private void LoadComponents()
+        {
+            contentFormat = new ContentFormat();
+            genericMethods = new GenericMethods();
+            contentFormat.DateFormat(birth_date);
+            btn_registerStudent.Text = txtBtnRegister[0];
+            if (studentDataUpdate != null)
+            {
+                FillFormContent();
+            }
+        }
+
+        private void FillFormContent()
+        {
+            btn_registerStudent.Text = txtBtnRegister[1];
+            student_id = studentDataUpdate[0].StudentId;
+            address_id = studentDataUpdate[0].AddressId;
+            contact_id = studentDataUpdate[0].ContactId;
+            parent_id = studentDataUpdate[0].ParentsId;
+            nameStudent.Text = studentDataUpdate[0].Name;
+            cpf_student.Text = studentDataUpdate[0].Cpf;
+            birth_date.Value = studentDataUpdate[0].Birth.Date;
+            nis.Text = studentDataUpdate[0].Nis;
+            studentCode.Text = studentDataUpdate[0].StudentCod;
+            father_name.Text = studentDataUpdate[0].FatherName;
+            mother_name.Text = studentDataUpdate[0].MotherName;
+            numberContact1.Text = studentDataUpdate[0].Telephone1;
+            numberContact2.Text = studentDataUpdate[0].Telephone2;
+            email.Text = studentDataUpdate[0].Email;
+            if (string.IsNullOrEmpty(studentDataUpdate[0].Email))
+            {
+                chk_not_email.Checked = true;
+            }
+            foreach  (RadioButton radio in group_sift.Controls)
+            {
+                if (radio.Text == studentDataUpdate[0].Shift) 
+                    radio.Checked = true;
+            }
+            serie_year.Text = studentDataUpdate[0].Serie;
+            if (!string.IsNullOrEmpty(studentDataUpdate[0].ProjectName))
+            {
+                project_name.Text = studentDataUpdate[0].ProjectName;
+                inProject.Checked = true;
+            }
+            zip_code.Text = studentDataUpdate[0].ZipCode;
+            street.Text = studentDataUpdate[0].Street;
+            district.Text = studentDataUpdate[0].District;
+            city.Text = studentDataUpdate[0].City;
+            number_residence.Text = studentDataUpdate[0].Number;
+            complement.Text = studentDataUpdate[0].Complement;
+            note.Text = studentDataUpdate[0].Note;
         }
 
         private void btn_registerStudent_Click(object sender, EventArgs e)
         {
-            string student_id = Guid.NewGuid().ToString("N");
-            string parent_id = Guid.NewGuid().ToString("N");
-            string contact_id = Guid.NewGuid().ToString("N");
-            string address_id = Guid.NewGuid().ToString("N");
+            registerStudent();
+        }
+
+        private void registerStudent()
+        {
+            if (string.IsNullOrEmpty(student_id) || string.IsNullOrEmpty(parent_id) || string.IsNullOrEmpty(contact_id) || string.IsNullOrEmpty(address_id))
+            {
+                student_id = Guid.NewGuid().ToString("N");
+                parent_id = Guid.NewGuid().ToString("N");
+                contact_id = Guid.NewGuid().ToString("N");
+                address_id = Guid.NewGuid().ToString("N");
+            }
 
             DateTime birth = new DateTime();
             birth = birth_date.Value;
@@ -52,32 +112,33 @@ namespace GerenciamentoEscolar.Pages
             studentData.MotherName = mother_name.Text;
 
             studentData.ContactId = contact_id;
-            studentData.Telephone1 = RemoveMask(numberContact1.Text);
-            studentData.Telephone2 = RemoveMask(numberContact2.Text);
+            studentData.Telephone1 = contentFormat.RemoveContentFormat(numberContact1.Text);
+            studentData.Telephone2 = contentFormat.RemoveContentFormat(numberContact2.Text);
             studentData.Email = email.Text;
 
             studentData.AddressId = address_id;
-            studentData.ZipCode = RemoveMask(zip_code.Text);
+            studentData.ZipCode = contentFormat.RemoveContentFormat(zip_code.Text);
             studentData.Street = street.Text;
             studentData.District = district.Text;
             studentData.City = city.Text;
             studentData.Number = number_residence.Text;
-            if (complement.Text.Length == 0) 
+            if (complement.Text.Length == 0)
                 studentData.Complement = "Sem complemento";
-            else 
+            else
                 studentData.Complement = complement.Text;
 
             studentData.StudentId = student_id;
             studentData.Name = nameStudent.Text;
-            studentData.Cpf = RemoveMask(cpf_student.Text);
+            studentData.Cpf = contentFormat.RemoveContentFormat(cpf_student.Text);
             Console.WriteLine(studentData.Cpf);
             studentData.Birth = birth;
-            studentData.Nis = RemoveMask(nis.Text);
-            studentData.StudentCod = census_register.Text;
+            studentData.Nis = contentFormat.RemoveContentFormat(nis.Text);
+            studentData.StudentCod = studentCode.Text;
             studentData.Shift = GetShift();
             studentData.Serie = serie_year.Text;
             studentData.ProjectName = project_name.Text;
-            
+            studentData.Note = note.Text;
+
             studentData.AddressId = address_id;
             studentData.ContactId = contact_id;
             studentData.ParentsId = parent_id;
@@ -85,8 +146,6 @@ namespace GerenciamentoEscolar.Pages
 
             studentData.InProject = inProject;
             studentData.DontHaveEmail = chk_not_email;
-
-            
 
             if (studentData != null)
             {
@@ -107,30 +166,64 @@ namespace GerenciamentoEscolar.Pages
                 {
                     DbConnections db = new DbConnections();
                     bool[] register = new bool[4];
-                    bool success = true;
-                    register[0] = db.RegisterAddressStudent(studentData);
-                    register[1] = db.RegisterContactStudent(studentData);
-                    register[2] = db.RegisterParentsStudent(studentData);
-                    register[3] = db.RegisterStudent(studentData);
-                    foreach (bool result in register)
+                    bool update = false;
+                    if (studentDataUpdate == null)
                     {
-                        if (!result)
-                        {
-                            success = false;
-                            break;
-                        }
+                        register[0] = db.RegisterAddressStudent(studentData);
+                        register[1] = db.RegisterContactStudent(studentData);
+                        register[2] = db.RegisterParentsStudent(studentData);
+                        register[3] = db.RegisterStudent(studentData);
+                        update = false;
                     }
-                    if (!success)
-                        MessageBox.Show("Algo deu errado!");
                     else
-                        MessageBox.Show("Aluno matriculado");
+                    {
+                        register = db.UpdateAllDataStudent(studentData);
+                        CloseFormRegister();
+                        update = true;
+                    }
+                    returnMessage(register, update);
                 }
             }
         }
 
-        public string RemoveMask(string txt)
+        private void returnMessage(bool [] result, bool update)
         {
-            return txt.Replace("(", "").Replace(")", "").Replace(".", "").Replace(" ", "").Replace("-", "");
+            foreach (bool success in result)
+            {
+                if (!success)
+                {
+                    MessageBox.Show(message[4], message[3], MessageBoxButtons.OK);
+                    return;
+                } 
+                if (success && update)
+                {
+                    MessageBox.Show(message[2], message[0], MessageBoxButtons.OK);
+                    return;
+                }
+                if (success && !update)
+                {
+                    MessageBox.Show(message[1], message[0], MessageBoxButtons.OK);
+                    return;
+                }
+            }
+        }
+
+        private void CloseFormRegister()
+        {
+            Management_System management_System = (Management_System)Application.OpenForms["Management_System"];
+            FormUpdateRegister formUpdateRegister = (FormUpdateRegister)Application.OpenForms["FormUpdateRegister"];
+            FormRegister formRegister = (FormRegister)Application.OpenForms["FormRegister"];
+            formUpdateRegister.ExternalUpdateList();
+            foreach (Form form in management_System.panel_form.Controls)
+            {
+                if (form == formRegister)
+                {
+                    management_System.panel_form.Controls.Remove(formRegister);
+                    formRegister.Dispose();
+                    formRegister.Close();
+                }
+            }
+            studentDataUpdate = null;
         }
 
         private string GetShift()
@@ -141,6 +234,9 @@ namespace GerenciamentoEscolar.Pages
 
             else if (rd_afternoon.Checked)
                 shift = rd_afternoon.Text;
+
+            else if (rdNocturnal.Checked)
+                shift = rdNocturnal.Text;
 
             return shift;
         }
@@ -312,7 +408,7 @@ namespace GerenciamentoEscolar.Pages
 
         public void ZipCodeField(TextBox zipCode, KeyEventArgs e)
         {
-            if (zipCode.Text.Length == 8)
+            if (zipCode.Text.Length >= 8)
             {
                 int position = zipCode.SelectionStart;
                 if ((e.KeyCode != Keys.Left && e.KeyCode != Keys.Right && e.KeyCode != Keys.Up && e.KeyCode != Keys.Down))
@@ -387,6 +483,11 @@ namespace GerenciamentoEscolar.Pages
             {
                 ClearAddressField();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            CloseFormRegister();
         }
     }
 }

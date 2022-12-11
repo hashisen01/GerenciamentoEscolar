@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.11.2.2\lib\netstandard2.0\FluentValidation.dll</HintPath>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="Modals\PopupMessages.Designer.cs">
       <DependentUpon>PopupMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\StudentListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modals\StudentListItem.Designer.cs">
+      <DependentUpon>StudentListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\FormHome.cs">
       <SubType>Form</SubType>
@@ -106,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\PopupMessages.resx">
       <DependentUpon>PopupMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\StudentListItem.resx">
+      <DependentUpon>StudentListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
@@ -220,6 +235,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\updateStudent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-results.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

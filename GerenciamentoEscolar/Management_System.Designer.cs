@@ -45,6 +45,7 @@ namespace GerenciamentoEscolar
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_form = new System.Windows.Forms.Panel();
             this.menu_buttons = new System.Windows.Forms.TableLayoutPanel();
             this.panelRegister = new System.Windows.Forms.Panel();
             this.registerStudent = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@ namespace GerenciamentoEscolar
             this.historic = new System.Windows.Forms.Button();
             this.panelActivity = new System.Windows.Forms.Panel();
             this.activity = new System.Windows.Forms.Button();
-            this.panel_form = new System.Windows.Forms.Panel();
             this.panelNavBar.SuspendLayout();
             this.sub_menu_register.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -360,6 +360,16 @@ namespace GerenciamentoEscolar
             this.panel1.TabIndex = 0;
             this.panel1.TabStop = true;
             // 
+            // panel_form
+            // 
+            this.panel_form.BackColor = System.Drawing.Color.Transparent;
+            this.panel_form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_form.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_form.Location = new System.Drawing.Point(0, 0);
+            this.panel_form.Name = "panel_form";
+            this.panel_form.Size = new System.Drawing.Size(1749, 749);
+            this.panel_form.TabIndex = 3;
+            // 
             // menu_buttons
             // 
             this.menu_buttons.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -504,16 +514,6 @@ namespace GerenciamentoEscolar
             this.activity.UseVisualStyleBackColor = false;
             this.activity.Click += new System.EventHandler(this.activity_Click);
             // 
-            // panel_form
-            // 
-            this.panel_form.BackColor = System.Drawing.Color.Transparent;
-            this.panel_form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_form.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_form.Location = new System.Drawing.Point(0, 0);
-            this.panel_form.Name = "panel_form";
-            this.panel_form.Size = new System.Drawing.Size(1749, 749);
-            this.panel_form.TabIndex = 3;
-            // 
             // Management_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -569,6 +569,6 @@ namespace GerenciamentoEscolar
         private System.Windows.Forms.Button historic;
         private System.Windows.Forms.Panel panelActivity;
         private System.Windows.Forms.Button activity;
-        private System.Windows.Forms.Panel panel_form;
+        public System.Windows.Forms.Panel panel_form;
     }
 }

@@ -11,13 +11,14 @@ namespace GerenciamentoEscolar.utils
 {
     public class ValidateData : AbstractValidator<StudentData>
     {
+        ContentFormat format = new ContentFormat();
         public ValidateData()
         {
             RuleFor(_parentId => _parentId.ParentsId).NotEmpty().NotNull().WithMessage("ParentsID vazio ou null. Por favor, entre em contato com o dev se o erro persistir");
             RuleFor(_fatherName => _fatherName.FatherName).MaximumLength(100).WithMessage("Nome do pai deve conter no máximo 100 caracteres");
-            RuleFor(_fatherName => _fatherName.FatherName).MinimumLength(3).WithMessage("Nome do pai deve conter pelos menos 3 caracteres");
+            RuleFor(_fatherName => _fatherName.FatherName).Must(format.IsValidName).WithMessage("Nome do pai é inválido");
             RuleFor(_motherName => _motherName.MotherName).MaximumLength(100).WithMessage("Nome da mãe deve conter no máximo 100 caracteres");
-            RuleFor(_motherName => _motherName.MotherName).MinimumLength(3).WithMessage("Nome da mãe deve conter pelos menos 3 caracteres");
+            RuleFor(_motherName => _motherName.MotherName).Must(format.IsValidName).WithMessage("Nome da mãe é inválido");
 
             RuleFor(_contactId => _contactId.ContactId).NotEmpty().NotNull().WithMessage("ContactID vazio ou null. Por favor, entre em contato com o dev se o erro persistir");
             RuleFor(_tel1 => _tel1.Telephone1).NotEmpty().When(_tel2 => (string.IsNullOrEmpty(_tel2.Telephone2)) && string.IsNullOrEmpty(_tel2.Email)).WithMessage("Preencha pelo menos uma forma de contato");
@@ -36,7 +37,7 @@ namespace GerenciamentoEscolar.utils
             RuleFor(_complement => _complement.Complement).NotEmpty().When(_complement => (string.IsNullOrWhiteSpace(_complement.Complement))).WithMessage("Campo Complemento não aceita espaço em branco");
 
             RuleFor(_studentId => _studentId.StudentId).NotEmpty().NotNull().WithMessage("StudentID vazio ou null. Por favor, entre em contato com o dev se o erro persistir"); ;
-            RuleFor(_name => _name.Name).MinimumLength(3).WithMessage("O nome do estudante deve conter pelo menos 3 caracteres");
+            RuleFor(_name => _name.Name).Must(format.IsValidName).WithMessage("O nome do estudante é inválido");
             RuleFor(_name => _name.Name).MaximumLength(100).WithMessage("O nome do estudante não pode conter mais que 100 caracteres");
             RuleFor(_cpf => _cpf.Cpf).Length(11,11).WithMessage("CPF inválido");
             RuleFor(_dateBirth => _dateBirth.Birth).Must(BeAValidAge).WithMessage("Data de nascimento inválida");
@@ -46,8 +47,7 @@ namespace GerenciamentoEscolar.utils
             RuleFor(_note => _note.Note).MaximumLength(300).WithMessage("A observação não pode conter mais que 300 caracteres");
             RuleFor(_shift => _shift.Shift).NotEmpty().WithMessage("Informe um turno");
             RuleFor(_serie => _serie.Serie).NotEmpty().WithMessage("Nenhuma série selecionada");
-            RuleFor(_projectName => _projectName.ProjectName).NotEmpty().When(_inProject => (_inProject.InProject.Checked)).WithMessage("Nome do projeto não pode ser vazio");
-            RuleFor(_projectName => _projectName.ProjectName).MinimumLength(3).When(_inProject => (_inProject.InProject.Checked)).WithMessage("O nome do projeto deve conter pelo menos que 3 caracteres");
+            RuleFor(_projectName => _projectName.ProjectName).MaximumLength(3).When(_inProject => (_inProject.InProject.Checked)).WithMessage("O nome do projeto deve conter pelo menos que 3 caracteres");
             RuleFor(_projectName => _projectName.ProjectName).MaximumLength(100).When(_inProject => (_inProject.InProject.Checked)).WithMessage("O nome do projeto não pode conter mais que 100 caracteres");
         }
 
@@ -68,7 +68,7 @@ namespace GerenciamentoEscolar.utils
         {
             string emailValid = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
             
-            if (System.Text.RegularExpressions.Regex.IsMatch(email, emailValid))
+            if (Regex.IsMatch(email, emailValid))
             {
                 return true;
             }

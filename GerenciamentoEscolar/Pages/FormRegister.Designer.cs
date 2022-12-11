@@ -30,7 +30,8 @@ namespace GerenciamentoEscolar.Pages
         private void InitializeComponent()
         {
             this.btn_registerStudent = new System.Windows.Forms.Button();
-            this.group_turno = new System.Windows.Forms.GroupBox();
+            this.group_sift = new System.Windows.Forms.GroupBox();
+            this.rdNocturnal = new System.Windows.Forms.RadioButton();
             this.rd_afternoon = new System.Windows.Forms.RadioButton();
             this.rd_morning = new System.Windows.Forms.RadioButton();
             this.lbl_telefone2 = new System.Windows.Forms.Label();
@@ -72,43 +73,56 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_complemento = new System.Windows.Forms.Label();
             this.cpf_student = new System.Windows.Forms.TextBox();
             this.nis = new System.Windows.Forms.TextBox();
-            this.census_register = new System.Windows.Forms.TextBox();
+            this.studentCode = new System.Windows.Forms.TextBox();
             this.inProject = new System.Windows.Forms.CheckBox();
-            this.group_turno.SuspendLayout();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.group_sift.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_registerStudent
             // 
-            this.btn_registerStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btn_registerStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(238)))), ((int)(((byte)(0)))));
+            this.btn_registerStudent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(238)))), ((int)(((byte)(0)))));
             this.btn_registerStudent.FlatAppearance.BorderSize = 0;
-            this.btn_registerStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.btn_registerStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.btn_registerStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(255)))), ((int)(((byte)(75)))));
+            this.btn_registerStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(255)))), ((int)(((byte)(24)))));
             this.btn_registerStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registerStudent.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registerStudent.ForeColor = System.Drawing.Color.White;
-            this.btn_registerStudent.Location = new System.Drawing.Point(880, 600);
+            this.btn_registerStudent.Location = new System.Drawing.Point(902, 612);
             this.btn_registerStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_registerStudent.Name = "btn_registerStudent";
-            this.btn_registerStudent.Size = new System.Drawing.Size(225, 68);
+            this.btn_registerStudent.Size = new System.Drawing.Size(203, 56);
             this.btn_registerStudent.TabIndex = 40;
-            this.btn_registerStudent.Text = "Realizar matrícula";
+            this.btn_registerStudent.TabStop = false;
             this.btn_registerStudent.UseVisualStyleBackColor = false;
             this.btn_registerStudent.Click += new System.EventHandler(this.btn_registerStudent_Click);
             // 
-            // group_turno
+            // group_sift
             // 
-            this.group_turno.Controls.Add(this.rd_afternoon);
-            this.group_turno.Controls.Add(this.rd_morning);
-            this.group_turno.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_turno.Location = new System.Drawing.Point(501, 537);
-            this.group_turno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.group_turno.Name = "group_turno";
-            this.group_turno.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.group_turno.Size = new System.Drawing.Size(140, 108);
-            this.group_turno.TabIndex = 12;
-            this.group_turno.TabStop = false;
-            this.group_turno.Text = "Turno";
+            this.group_sift.Controls.Add(this.rdNocturnal);
+            this.group_sift.Controls.Add(this.rd_afternoon);
+            this.group_sift.Controls.Add(this.rd_morning);
+            this.group_sift.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_sift.Location = new System.Drawing.Point(501, 537);
+            this.group_sift.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.group_sift.Name = "group_sift";
+            this.group_sift.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.group_sift.Size = new System.Drawing.Size(140, 121);
+            this.group_sift.TabIndex = 12;
+            this.group_sift.TabStop = false;
+            this.group_sift.Text = "Turno";
+            // 
+            // rdNocturnal
+            // 
+            this.rdNocturnal.AutoSize = true;
+            this.rdNocturnal.Location = new System.Drawing.Point(7, 94);
+            this.rdNocturnal.Name = "rdNocturnal";
+            this.rdNocturnal.Size = new System.Drawing.Size(87, 25);
+            this.rdNocturnal.TabIndex = 2;
+            this.rdNocturnal.Text = "Noturno";
+            this.rdNocturnal.UseVisualStyleBackColor = true;
             // 
             // rd_afternoon
             // 
@@ -117,7 +131,6 @@ namespace GerenciamentoEscolar.Pages
             this.rd_afternoon.Name = "rd_afternoon";
             this.rd_afternoon.Size = new System.Drawing.Size(103, 25);
             this.rd_afternoon.TabIndex = 1;
-            this.rd_afternoon.TabStop = true;
             this.rd_afternoon.Text = "Vespertino";
             this.rd_afternoon.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +141,6 @@ namespace GerenciamentoEscolar.Pages
             this.rd_morning.Name = "rd_morning";
             this.rd_morning.Size = new System.Drawing.Size(91, 25);
             this.rd_morning.TabIndex = 0;
-            this.rd_morning.TabStop = true;
             this.rd_morning.Text = "Matutino";
             this.rd_morning.UseVisualStyleBackColor = true;
             // 
@@ -152,6 +164,7 @@ namespace GerenciamentoEscolar.Pages
             this.chk_not_email.Name = "chk_not_email";
             this.chk_not_email.Size = new System.Drawing.Size(138, 25);
             this.chk_not_email.TabIndex = 41;
+            this.chk_not_email.TabStop = false;
             this.chk_not_email.Text = "Não tem email?";
             this.chk_not_email.UseVisualStyleBackColor = true;
             this.chk_not_email.CheckedChanged += new System.EventHandler(this.chk_not_email_CheckedChanged);
@@ -181,6 +194,7 @@ namespace GerenciamentoEscolar.Pages
             this.serie_year.Name = "serie_year";
             this.serie_year.Size = new System.Drawing.Size(130, 29);
             this.serie_year.TabIndex = 38;
+            this.serie_year.TabStop = false;
             this.serie_year.SelectedIndexChanged += new System.EventHandler(this.serie_year_SelectedIndexChanged);
             // 
             // birth_date
@@ -192,6 +206,7 @@ namespace GerenciamentoEscolar.Pages
             this.birth_date.Name = "birth_date";
             this.birth_date.Size = new System.Drawing.Size(130, 29);
             this.birth_date.TabIndex = 31;
+            this.birth_date.TabStop = false;
             // 
             // lbl_nascimento
             // 
@@ -267,9 +282,9 @@ namespace GerenciamentoEscolar.Pages
             this.lbl_cad_censo.Location = new System.Drawing.Point(53, 115);
             this.lbl_cad_censo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_cad_censo.Name = "lbl_cad_censo";
-            this.lbl_cad_censo.Size = new System.Drawing.Size(141, 21);
+            this.lbl_cad_censo.Size = new System.Drawing.Size(128, 21);
             this.lbl_cad_censo.TabIndex = 21;
-            this.lbl_cad_censo.Text = "Cadastro do censo:";
+            this.lbl_cad_censo.Text = "Código do aluno:";
             // 
             // lbl_nome_aluno
             // 
@@ -321,6 +336,7 @@ namespace GerenciamentoEscolar.Pages
             this.nameStudent.Name = "nameStudent";
             this.nameStudent.Size = new System.Drawing.Size(342, 29);
             this.nameStudent.TabIndex = 60;
+            this.nameStudent.TabStop = false;
             // 
             // father_name
             // 
@@ -329,6 +345,7 @@ namespace GerenciamentoEscolar.Pages
             this.father_name.Name = "father_name";
             this.father_name.Size = new System.Drawing.Size(342, 29);
             this.father_name.TabIndex = 61;
+            this.father_name.TabStop = false;
             // 
             // mother_name
             // 
@@ -336,14 +353,16 @@ namespace GerenciamentoEscolar.Pages
             this.mother_name.Name = "mother_name";
             this.mother_name.Size = new System.Drawing.Size(342, 29);
             this.mother_name.TabIndex = 65;
+            this.mother_name.TabStop = false;
             // 
             // numberContact1
             // 
             this.numberContact1.Location = new System.Drawing.Point(57, 400);
-            this.numberContact1.MaxLength = 11;
+            this.numberContact1.MaxLength = 15;
             this.numberContact1.Name = "numberContact1";
             this.numberContact1.Size = new System.Drawing.Size(130, 29);
             this.numberContact1.TabIndex = 66;
+            this.numberContact1.TabStop = false;
             this.numberContact1.WordWrap = false;
             this.numberContact1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberContact_KeyPress);
             this.numberContact1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numberContact1_KeyUp);
@@ -351,10 +370,11 @@ namespace GerenciamentoEscolar.Pages
             // numberContact2
             // 
             this.numberContact2.Location = new System.Drawing.Point(267, 400);
-            this.numberContact2.MaxLength = 11;
+            this.numberContact2.MaxLength = 15;
             this.numberContact2.Name = "numberContact2";
             this.numberContact2.Size = new System.Drawing.Size(130, 29);
             this.numberContact2.TabIndex = 67;
+            this.numberContact2.TabStop = false;
             this.numberContact2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberContact_KeyPress);
             this.numberContact2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numberContact2_KeyUp);
             // 
@@ -364,6 +384,7 @@ namespace GerenciamentoEscolar.Pages
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(342, 29);
             this.email.TabIndex = 68;
+            this.email.TabStop = false;
             // 
             // project_name
             // 
@@ -371,6 +392,7 @@ namespace GerenciamentoEscolar.Pages
             this.project_name.Name = "project_name";
             this.project_name.Size = new System.Drawing.Size(250, 29);
             this.project_name.TabIndex = 69;
+            this.project_name.TabStop = false;
             this.project_name.Visible = false;
             // 
             // groupBox1
@@ -414,6 +436,7 @@ namespace GerenciamentoEscolar.Pages
             this.note.Name = "note";
             this.note.Size = new System.Drawing.Size(250, 116);
             this.note.TabIndex = 90;
+            this.note.TabStop = false;
             // 
             // zip_code
             // 
@@ -422,6 +445,7 @@ namespace GerenciamentoEscolar.Pages
             this.zip_code.Name = "zip_code";
             this.zip_code.Size = new System.Drawing.Size(110, 29);
             this.zip_code.TabIndex = 89;
+            this.zip_code.TabStop = false;
             this.zip_code.Tag = "0";
             this.zip_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.zip_code_KeyPress);
             this.zip_code.KeyUp += new System.Windows.Forms.KeyEventHandler(this.zip_code_KeyUp);
@@ -432,6 +456,7 @@ namespace GerenciamentoEscolar.Pages
             this.complement.Name = "complement";
             this.complement.Size = new System.Drawing.Size(250, 29);
             this.complement.TabIndex = 87;
+            this.complement.TabStop = false;
             // 
             // street
             // 
@@ -439,6 +464,7 @@ namespace GerenciamentoEscolar.Pages
             this.street.Name = "street";
             this.street.Size = new System.Drawing.Size(250, 29);
             this.street.TabIndex = 86;
+            this.street.TabStop = false;
             // 
             // district
             // 
@@ -446,6 +472,7 @@ namespace GerenciamentoEscolar.Pages
             this.district.Name = "district";
             this.district.Size = new System.Drawing.Size(250, 29);
             this.district.TabIndex = 84;
+            this.district.TabStop = false;
             // 
             // city
             // 
@@ -453,6 +480,7 @@ namespace GerenciamentoEscolar.Pages
             this.city.Name = "city";
             this.city.Size = new System.Drawing.Size(250, 29);
             this.city.TabIndex = 83;
+            this.city.TabStop = false;
             // 
             // number_residence
             // 
@@ -460,6 +488,7 @@ namespace GerenciamentoEscolar.Pages
             this.number_residence.Name = "number_residence";
             this.number_residence.Size = new System.Drawing.Size(250, 29);
             this.number_residence.TabIndex = 82;
+            this.number_residence.TabStop = false;
             // 
             // label1
             // 
@@ -530,10 +559,11 @@ namespace GerenciamentoEscolar.Pages
             // cpf_student
             // 
             this.cpf_student.Location = new System.Drawing.Point(501, 59);
-            this.cpf_student.MaxLength = 11;
+            this.cpf_student.MaxLength = 14;
             this.cpf_student.Name = "cpf_student";
             this.cpf_student.Size = new System.Drawing.Size(137, 29);
             this.cpf_student.TabIndex = 88;
+            this.cpf_student.TabStop = false;
             this.cpf_student.Tag = "0";
             this.cpf_student.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cpf_student_KeyPress);
             this.cpf_student.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cpf_student_KeyUp);
@@ -541,23 +571,25 @@ namespace GerenciamentoEscolar.Pages
             // nis
             // 
             this.nis.Location = new System.Drawing.Point(968, 59);
-            this.nis.MaxLength = 11;
+            this.nis.MaxLength = 14;
             this.nis.Name = "nis";
             this.nis.Size = new System.Drawing.Size(137, 29);
             this.nis.TabIndex = 89;
+            this.nis.TabStop = false;
             this.nis.Tag = "0";
             this.nis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nis_KeyPress);
             this.nis.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nis_KeyUp);
             // 
-            // census_register
+            // studentCode
             // 
-            this.census_register.Location = new System.Drawing.Point(57, 144);
-            this.census_register.MaxLength = 12;
-            this.census_register.Name = "census_register";
-            this.census_register.Size = new System.Drawing.Size(137, 29);
-            this.census_register.TabIndex = 90;
-            this.census_register.Tag = "0";
-            this.census_register.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.census_register_KeyPress);
+            this.studentCode.Location = new System.Drawing.Point(57, 144);
+            this.studentCode.MaxLength = 12;
+            this.studentCode.Name = "studentCode";
+            this.studentCode.Size = new System.Drawing.Size(137, 29);
+            this.studentCode.TabIndex = 90;
+            this.studentCode.TabStop = false;
+            this.studentCode.Tag = "0";
+            this.studentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.census_register_KeyPress);
             // 
             // inProject
             // 
@@ -566,9 +598,29 @@ namespace GerenciamentoEscolar.Pages
             this.inProject.Name = "inProject";
             this.inProject.Size = new System.Drawing.Size(144, 25);
             this.inProject.TabIndex = 91;
+            this.inProject.TabStop = false;
             this.inProject.Text = "Está em projeto*";
             this.inProject.UseVisualStyleBackColor = true;
             this.inProject.CheckedChanged += new System.EventHandler(this.inProject_CheckedChanged);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Red;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(57, 612);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(177, 56);
+            this.btnBack.TabIndex = 92;
+            this.btnBack.TabStop = false;
+            this.btnBack.Text = "Voltar";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormRegister
             // 
@@ -578,8 +630,9 @@ namespace GerenciamentoEscolar.Pages
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1171, 749);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.inProject);
-            this.Controls.Add(this.census_register);
+            this.Controls.Add(this.studentCode);
             this.Controls.Add(this.nis);
             this.Controls.Add(this.cpf_student);
             this.Controls.Add(this.groupBox1);
@@ -591,7 +644,7 @@ namespace GerenciamentoEscolar.Pages
             this.Controls.Add(this.father_name);
             this.Controls.Add(this.nameStudent);
             this.Controls.Add(this.btn_registerStudent);
-            this.Controls.Add(this.group_turno);
+            this.Controls.Add(this.group_sift);
             this.Controls.Add(this.lbl_telefone2);
             this.Controls.Add(this.chk_not_email);
             this.Controls.Add(this.serie_year);
@@ -614,8 +667,8 @@ namespace GerenciamentoEscolar.Pages
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormRegister_Load);
-            this.group_turno.ResumeLayout(false);
-            this.group_turno.PerformLayout();
+            this.group_sift.ResumeLayout(false);
+            this.group_sift.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -625,7 +678,7 @@ namespace GerenciamentoEscolar.Pages
 
         #endregion
         private System.Windows.Forms.Button btn_registerStudent;
-        private System.Windows.Forms.GroupBox group_turno;
+        private System.Windows.Forms.GroupBox group_sift;
         private System.Windows.Forms.Label lbl_telefone2;
         private System.Windows.Forms.CheckBox chk_not_email;
         private System.Windows.Forms.ComboBox serie_year;
@@ -665,9 +718,11 @@ namespace GerenciamentoEscolar.Pages
         private System.Windows.Forms.TextBox cpf_student;
         private System.Windows.Forms.TextBox zip_code;
         private System.Windows.Forms.TextBox nis;
-        private System.Windows.Forms.TextBox census_register;
+        private System.Windows.Forms.TextBox studentCode;
         private System.Windows.Forms.CheckBox inProject;
         private System.Windows.Forms.Label lbl_Note;
         private System.Windows.Forms.TextBox note;
+        private System.Windows.Forms.RadioButton rdNocturnal;
+        public System.Windows.Forms.Button btnBack;
     }
 }
