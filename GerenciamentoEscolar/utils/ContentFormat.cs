@@ -15,6 +15,12 @@ namespace GerenciamentoEscolar.utils
             
         }
 
+        public void DateFormat(DateTimePicker date)
+        {
+            date.Format = DateTimePickerFormat.Custom;
+            date.CustomFormat = "dd/MM/yyyy";
+        }
+
         public string ContentFormatCpf(string cpf)
         {
             MaskedTextBox maskedText = new MaskedTextBox();
@@ -32,12 +38,13 @@ namespace GerenciamentoEscolar.utils
             MaskedTextBox maskedText = new MaskedTextBox();
             if (nis.Length > 10)
             {
-                maskedText.Mask = "00,00000,000-0";
+                maskedText.Mask = "000,00000,00-0";
                 maskedText.Text = nis;
                 return maskedText.Text;
             }
             return nis;
         }
+
 
         public string ContentFormatTelephone(string telephone)
         {
@@ -51,22 +58,30 @@ namespace GerenciamentoEscolar.utils
             return telephone;
         }
 
-        public string ContentFormatZipCode(string cep)
+        public string ContentFormatZipCode(string zipCode)
         {
             MaskedTextBox maskedText = new MaskedTextBox();
-            if (cep.Length == 8)
+            if (zipCode.Length == 8)
             {
                 maskedText.Mask = "00000-000";
-                maskedText.Text = cep;
+                maskedText.Text = zipCode;
                 return maskedText.Text;
             }
-            return cep;
+            return zipCode;
         }
 
         public string GetContentIsNumber(string field)
         {
             field = Regex.Replace(field, @"[^\d]", "");
             return field;
+        }
+        
+        public bool IsValidName(string fullName)
+        {
+            if (Regex.IsMatch(fullName, @"^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$"))
+                return true;
+
+            return false;
         }
 
         public string RemoveContentFormat(string feild)

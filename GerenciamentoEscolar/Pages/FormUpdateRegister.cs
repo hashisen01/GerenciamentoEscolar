@@ -1,14 +1,9 @@
 ﻿using Gerenciamento_Escolar.str;
+using GerenciamentoEscolar.Modals;
 using GerenciamentoEscolar.utils;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GerenciamentoEscolar.Pages
@@ -16,89 +11,250 @@ namespace GerenciamentoEscolar.Pages
     public partial class FormUpdateRegister : Form
     {
         private DbConnections dbConnections;
+        ContentFormat contentFormat;
+        bool byAll = false, byInactive = false, byActive = false, byCpf = true, byName = false;
         public FormUpdateRegister()
         {
             InitializeComponent();
             dbConnections = new DbConnections();
         }
+        private void FormUpdateRegister_Load(object sender, EventArgs e)
+        {
+            LoadComponents();
+        }
+
+        private void LoadComponents()
+        {
+            contentFormat = new ContentFormat();
+            contentFormat.DateFormat(birth_date);
+            groupStatus.Visible = false;
+            cpf_student.GotFocus += RemoveText;
+            cpf_student.LostFocus += AddText;
+        }
 
         private void chk_shearch_name_CheckedChanged(object sender, EventArgs e)
         {
-            if (panel_data_shearch.Visible)
+            if (panel_name_date.Visible)
             {
-                panel_data_shearch.Visible = false;
+                nameDateIsVisible(false);
                 lbl_cpf.Visible = true;
                 cpf_student.Visible = true;
             }
             else
             {
-                panel_data_shearch.Visible = true;
+                nameDateIsVisible(true);
                 cpf_student.Visible = false;
                 lbl_cpf.Visible = false;
             }
         }
 
+        private void chkShearchByStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            makeVisibleLastSearch();
+            if (chkShearchByStatus.Checked)
+            {
+                groupStatus.Visible = true;
+                panel_shearch.Visible = false;
+                statusesAreVisible(true);
+            }
+            else
+            {
+                groupStatus.Visible = false;
+                panel_shearch.Visible = true;
+                statusesAreVisible(false);
+            }
+            radioAllChecked();
+            radioActiveChecked();
+            radioInactiveChecked();
+        }
+
         private void btn_shearch_Click(object sender, EventArgs e)
         {
-            var studentData = new StudentData();
-
-            studentData = dbConnections.ShearchStudent(cpf_student.Text);
-
-            //dataGridView1.Rows[1].Cells[1].Value = studentData.Name;
+            flowPanel.Controls.Clear();
+            if (!chkShearchByStatus.Checked && !chk_shearch_name.Checked)
+            {
+                byAll = true;
+                byCpf = true;
+                byName = false;
+                radiosStatusChecked(false);
+                birth_date.Value = DateTime.Now;
+                name.Clear();
+                SearchStudentByCPF();
+            }
+            else if (!chkShearchByStatus.Checked && chk_shearch_name.Checked)
+            {
+                byAll = true;
+                byName = true;
+                byCpf = false;
+                cpf_student.Text = "Digite o cpf...";
+                radiosStatusChecked(false);
+                SearchByNameAndBirth();
+            }
+            else if (rdAll.Checked)
+            {
+                byAll = true;
+                byActive = false;
+                byInactive = false;
+                byCpf = false;
+                clearInputs();
+                ShearchAllStudents();
+                Console.WriteLine($"{byAll}, {byActive}, {byInactive}" + " 1");
+            }
+            else if (rdActive.Checked || rdInactive.Checked)
+            {
+                byAll = false;
+                byCpf = false;
+                byName = false;
+                clearInputs();
+                if (rdActive.Checked)
+                {
+                    ShearchByStatus(true);
+                    byActive = true;
+                    byInactive = false;
+                }
+                else
+                {
+                    ShearchByStatus(false);
+                    byActive = false;
+                    byInactive = true;
+                }
+            }
+            else
+            {
+                noResult.Visible = true;
+                notFound.Visible = true;
+            }
+            Console.WriteLine($"{byAll}, {byActive}, {byInactive}" + " 2");
         }
 
-        private void ContentFormat(TextBox input, KeyEventArgs keyE)
+        public void ExternalUpdateList()
         {
-            if (input.Name == "cpf_student" || input.Name == "nis_pis")
-            {
-                if (input.Text.Length == 11 && input.Name == "cpf_student")
-                {
-                    long cpf = Convert.ToInt64(input.Text);
-                    input.MaxLength = 14;
-                    string content = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                    input.Text = content;
-                    CursorPosition(input);
-                }
-                else if (input.Text.Length == 11 && input.Name == "nis_pis")
-                {
-                    long cpf = Convert.ToInt64(input.Text);
-                    input.MaxLength = 14;
-                    string content = String.Format(@"{0:000\.00000\.00\-0}", cpf);
-                    input.Text = content;
-                    CursorPosition(input);
+            btn_shearch.PerformClick();
+        }
 
-                }
-                else if (keyE.KeyCode == Keys.Back)
-                {
-                    input.MaxLength = 11;
-                    input.Text = input.Text.Replace(".", "").Replace("-", "");
-                    CursorPosition(input);
-                }
-            }
-            else if (input.Name == "zip_code")
+        public void UpdateList(bool status)
+        {
+            if (!byAll && (byActive || byInactive))
+                ShearchByStatus(status);
+        }
+
+        private void input_cpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyPressed(e);
+        }
+
+        private void cpf_student_KeyUp(object sender, KeyEventArgs e)
+        {
+            CpfField(cpf_student, e);
+        }
+
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (cpf_student.Text == "Digite o cpf...")
             {
-                if (input.Text.Length == 8 && input.Text.IndexOf('-') == -1)
-                {
-                    long zipCode = Convert.ToInt64(input.Text);
-                    input.MaxLength = 9;
-                    string content = String.Format(@"{0:00000\-000}", zipCode);
-                    input.Text = content;
-                    CursorPosition(input);
-                }
-                else if (keyE.KeyCode == Keys.Back)
-                {
-                    input.MaxLength = 8;
-                    input.Text = input.Text.Replace(".", "").Replace("-", "");
-                    CursorPosition(input);
-                }
+                cpf_student.Text = "";
             }
         }
-        private void CursorPosition(TextBox textBox)
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cpf_student.Text))
+            {
+                cpf_student.Text = "Digite o cpf...";
+            }
+        }
+
+        private void clearInputs()
+        {
+            birth_date.Value = DateTime.Now;
+            name.Clear();
+            cpf_student.Text = "Digite o cpf...";
+        }
+
+        private void makeVisibleLastSearch()
+        {
+            if (byCpf)
+            {
+                lbl_cpf.Visible = true;
+                cpf_student.Visible = true;
+                chk_shearch_name.Checked = false;
+                panel_name_date.Visible = false;
+                return;
+            }
+            if (byName)
+            {
+                cpf_student.Visible = false;
+                chk_shearch_name.Checked = true;
+                panel_name_date.Visible = true;
+                return;
+            }
+        }
+
+        private void radioAllChecked()
+        {
+            if (byAll)
+            {
+                rdAll.Checked = true;
+            }
+            else
+            {
+                rdAll.Checked = false;
+            }
+        }
+        private void radioActiveChecked()
+        {
+            if (byActive)
+            {
+                rdActive.Checked = true;
+            }
+            else
+            {
+                rdActive.Checked = false;
+            }
+        }
+
+        private void radioInactiveChecked()
+        {
+            if (byInactive)
+            {
+                rdInactive.Checked = true;
+            }
+            else
+            {
+                rdInactive.Checked = false;
+            }
+        }
+
+        private void statusesAreVisible(bool visible)
+        {
+            foreach (RadioButton ctrl in groupStatus.Controls)
+                ctrl.Visible = visible;
+        }
+
+        private void nameDateIsVisible(bool visible)
+        {
+            chk_shearch_name.Checked = visible;
+            panel_name_date.Visible = visible;
+        }
+
+        private void CaretPosition(TextBox textBox, int position)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
             {
-                textBox.Select(textBox.Text.Length, 0);
+                textBox.Select(position, 0);
             });
+        }
+
+        private void radiosStatusChecked(bool active)
+        {
+            byAll = active;
+            byActive = active;
+            byInactive = active;
+            if (!active)
+                foreach (RadioButton radio in groupStatus.Controls)
+                {
+                    radio.Checked = false;
+                }
         }
 
         private bool KeyPressed(KeyPressEventArgs e)
@@ -114,14 +270,127 @@ namespace GerenciamentoEscolar.Pages
             }
         }
 
-        private void input_cpf_KeyPress(object sender, KeyPressEventArgs e)
+        private void CpfField(TextBox fieldCpf, KeyEventArgs e)
         {
-            KeyPressed(e);
+            if (fieldCpf.Text.Length >= 11)
+            {
+                int position = fieldCpf.SelectionStart;
+                if ((e.KeyCode != Keys.Left && e.KeyCode != Keys.Right && e.KeyCode != Keys.Up && e.KeyCode != Keys.Down))
+                {
+                    fieldCpf.Text = contentFormat.GetContentIsNumber(fieldCpf.Text);
+                    fieldCpf.Text = contentFormat.ContentFormatCpf(fieldCpf.Text);
+
+                    CaretPosition(fieldCpf, contentFormat.GetCaretPositionCpf(fieldCpf.Text.Length, position));
+                }
+            }
         }
 
-        private void cpf_student_KeyUp(object sender, KeyEventArgs e)
+        private void PopulateItems(List<StudentData> studentData)
         {
-            ContentFormat(cpf_student, e);
+            flowPanel.Controls.Clear();
+            for (int i = 0; i < studentData.Count(); i++)
+            {
+                StudentListItem listItem = new StudentListItem();
+                listItem.ImageProfile = Properties.Resources.user;
+                listItem.StudentCode = studentData[i].StudentCod;
+                listItem.StudentName = studentData[i].Name;
+                listItem.Cpf = contentFormat.ContentFormatCpf(studentData[i].Cpf);
+                listItem.BirthDate = studentData[i].Birth.ToShortDateString();
+                listItem.ByAll = byAll;
+                if (studentData[i].Active == 0)
+                {
+                    listItem.BtnStatusImage = Properties.Resources.inactive;
+                    listItem.Status = "Inativo";
+                }
+                else
+                {
+                    listItem.BtnStatusImage = Properties.Resources.check;
+                    listItem.Status = "Ativo";
+                }
+                listItem.MotherName = studentData[i].MotherName;
+                listItem.FatherName = studentData[i].FatherName;
+                flowPanel.Controls.Add(listItem);
+                flowPanel.Controls.RemoveByKey("");
+            }
+        }
+
+        private void SearchByNameAndBirth()
+        {
+            noResult.Visible = false;
+            notFound.Visible = false;
+
+            List<StudentData> studentData = new List<StudentData>();
+            DateTime date = new DateTime();
+            date = birth_date.Value;
+
+            studentData = dbConnections.ShearchByNameAndBirthDate(name.Text, date);
+
+            if (studentData == null || studentData.Count() < 1)
+            {
+                noResult.Visible = true;
+                notFound.Visible = true;
+            }
+            else
+            {
+                PopulateItems(studentData);
+            }
+        }
+
+        private void ShearchByStatus(bool active)
+        {
+            flowPanel.Controls.Clear();
+            noResult.Visible = false;
+            notFound.Visible = false;
+            byte status = Convert.ToByte(active);
+            List<StudentData> studentByStatusData = new List<StudentData>();
+
+            studentByStatusData = dbConnections.ShearchByStatus(status);
+
+            if (studentByStatusData == null || studentByStatusData.Count() < 1)
+            {
+                noResult.Visible = true;
+                notFound.Visible = true;
+            }
+            else
+                PopulateItems(studentByStatusData);
+        }
+
+        private void ShearchAllStudents()
+        {
+            noResult.Visible = false;
+            notFound.Visible = false;
+            List<StudentData> studentAllData = new List<StudentData>();
+
+            studentAllData = dbConnections.ShearchAllStudent();
+
+            if (studentAllData == null || studentAllData.Count() < 1)
+            {
+                noResult.Visible = true;
+                notFound.Visible = true;
+            }
+            else
+            {
+                PopulateItems(studentAllData);
+            }
+        }
+
+        private void SearchStudentByCPF()
+        {
+            noResult.Visible = false;
+            notFound.Visible = false;
+            List<StudentData> studentByCpfData = new List<StudentData>();
+
+            studentByCpfData = dbConnections.ShearchByCPF(contentFormat.RemoveContentFormat(cpf_student.Text));
+
+            if (studentByCpfData == null || studentByCpfData.Count() < 1)
+            {
+                noResult.Visible = true;
+                notFound.Visible = true;
+            }
+            else
+            {
+                PopulateItems(studentByCpfData);
+            }
         }
     }
 }

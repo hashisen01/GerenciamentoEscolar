@@ -9,7 +9,6 @@ C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\ob
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Management_System.resources
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormRegister.resources
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormLogin.resources
-C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.AssemblyReference.cache
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormHome.resources
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Pages.FormUpdateRegister.resources
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Modals.PopupMessages.resources
@@ -20,3 +19,6 @@ C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bi
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.CopyComplete
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.Modals.StudentListItem.resources
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.AssemblyReference.cache
+C:\Users\Matheus Costa\source\repos\GerenciamentoEscolar\GerenciamentoEscolar\obj\Debug\GerenciamentoEscolar.csproj.SuggestedBindingRedirects.cache

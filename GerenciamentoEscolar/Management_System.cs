@@ -1,4 +1,5 @@
 ﻿using GerenciamentoEscolar.Pages;
+using GerenciamentoEscolar.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,11 +71,21 @@ namespace GerenciamentoEscolar
             Application.Exit();
         }
 
+        private void closeOpenFroms()
+        {
+            foreach (Form frm in panel_form.Controls)
+            {
+                frm.Dispose();
+                frm.Close();
+            }
+        }
+
         private void FormRenderise(Button button)
         {
             switch (button.Name)
             {
                 case "btn_home":
+                    closeOpenFroms();
                     ActivatedButton(btn_home);
                     panel_form.Visible = false;
                     panel_form.Controls.Clear();
@@ -82,6 +93,7 @@ namespace GerenciamentoEscolar
                     break;
 
                 case "btn_finances":
+                    closeOpenFroms();
                     ActivatedButton(button);
                     menu_buttons.Visible = false;
                     panel_form.Visible = true;
@@ -89,6 +101,7 @@ namespace GerenciamentoEscolar
                     break;
 
                 case "btn_register":
+                    closeOpenFroms();
                     ActivatedButton(button);
                     if (sub_menu_register.Visible)
                     {
@@ -101,6 +114,7 @@ namespace GerenciamentoEscolar
                     break;
 
                 case "btn_updateRegister":
+                    closeOpenFroms();
                     ActivatedButton(button);
                     menu_buttons.Visible = false;
                     panel_form.Visible = true;
@@ -112,10 +126,11 @@ namespace GerenciamentoEscolar
                     break;
 
                 case "btn_registerStudent":
+                    closeOpenFroms();
                     ActivatedButton(button);
                     menu_buttons.Visible = false;
                     panel_form.Visible = true;
-                    FormRegister form_register = new FormRegister();
+                    FormRegister form_register = new FormRegister(null);
                     form_register.TopLevel = false;
                     panel_form.Controls.Clear();
                     panel_form.Controls.Add(form_register);
@@ -123,18 +138,21 @@ namespace GerenciamentoEscolar
                     break;
 
                 case "btn_activity":
+                    closeOpenFroms();
                     panel_form.Visible = true;
                     menu_buttons.Visible = false;
                     ActivatedButton(button);
                     break;
 
                 case "btn_historic":
+                    closeOpenFroms();
                     panel_form.Visible = true;
                     menu_buttons.Visible = false;
                     ActivatedButton(button);
                     break;
 
                 default:
+                    closeOpenFroms();
                     break;
             }
         }
