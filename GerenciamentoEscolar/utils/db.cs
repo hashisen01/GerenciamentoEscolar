@@ -15,7 +15,7 @@ namespace Gerenciamento_Escolar
         //CONSTRUTOR
         public db()
         {
-            connection = "Data Source=DESKTOP-V8QNRBB;Initial Catalog=DB_PINOQUIO;Integrated Security=True";
+            connection = "";
         }
         //DECLARAÇÃO DE MÉTODO
         protected SqlConnection GetConnection()
